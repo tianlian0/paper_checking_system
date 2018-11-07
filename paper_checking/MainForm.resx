@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="textBox10.Text" xml:space="preserve">
+    <value>论文库说明：
+1、在“纵向查重”模式下，待查论文将和论文库中的所有论文进行比对。
+2、本系统仅提供论文库的添加功能，添加后的论文将将被转换成txt文件存放到软件装目录下的“txtPaperSource”文件夹下。
+3、使用“添加到论文库”功能时，请先将待添加到论文库的论文放入一个文件夹，然后再下面的路径选择框上选择该文件夹，然后点击"添加到论文库"。之后按钮会变灰，等待按钮恢复正常即可，整个过程较慢，请耐心等待。
+4、论文库中的论文使用文件名作为唯一标识，如果存在同名文件，后添加到论文库的论文将被直接忽略。建议规范待添加论文库的文件名，如使用论文编号或学号开头。
+5、如需要查看或删除已添加到论文库中的论文，请在安装目录的“txtPaperSource”文件夹下手工查看、删除。</value>
+  </data>
+  <data name="textBox4.Text" xml:space="preserve">
+    <value>1、该系统只支持简体中文论文查重，其它语言查重时结果不保证可信度，且可能提示失败。
+2、横向查重：比较同一批次内是否存在横向抄袭的问题。应用场景举例：比较该批次一百篇论文之间有没有互相抄袭的情况。
+3、纵向查重：将该批次论文和论文库中历年论文比对，检查是否有抄袭往年论文的情况。
+4、查重阈值：设定连续多少个字重复则认定为抄袭，推荐值为12，用户可根据实际情况自行修改为1~99之内的数值。
+5、关于如何使用：选择一个查重方式，设置好待查论文所在的文件夹和查重报告要保存在哪个文件夹，之后点击“开始查重”按钮，等待查重结束即可。
+6、查重的注意事项：①系统支持支pdf、doc、docx、txt格式的论文，文件夹中存在的其余格式的文件将被直接忽略。②非标准格式的论文查重时可能会由于转换失败导致查重失败。③如果有查重失败的论文，会在查重结束后弹窗提示。④如果待查论文在论文库中存在，且文件名不相同，则可能会导致查重重复率高于90%的情况。
+7、高级设置：在该选项卡中，可以设置查重的线程数，该数值的设定将影响查重的速度，推荐使用默认设置，用户也可根据实际情况自行修改。
+8、上一次查重结果：如果用户没有清楚历史数据，在这里可以看到上一次查重的结果，并重新导出查重报告。
+9、查重规则介绍：①连续重复字数超过查重阈值认定为重复。②单篇论文重复率0.3%以下或重复字数少于30字不认为是重复。③一篇论文多次引用其它论文的同一句话只认为其中的一句为重复。
+10、声明：本查重报告上的所有内容仅供参考。商业合作、技术咨询及BUG反馈可联系QQ/微信：654062779。</value>
+  </data>
+</root>
