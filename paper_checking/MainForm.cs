@@ -338,8 +338,7 @@ namespace paper_checking
             string[] param = new string[4] { textBox9.Text, paper_source, txt_paper_source, "0" };
             t1.Start(param);
             t1.Join();
-
-            t1 = new Thread(new ParameterizedThreadStart(start_convert_PDF));
+            
             param = new string[4] { textBox9.Text, to_check_paper, to_check_txt_paper, "0" };
             t1.Start(param);
             t1.Join();
