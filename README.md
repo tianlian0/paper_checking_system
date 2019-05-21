@@ -7,14 +7,15 @@
 1、clone源代码  
 2、使用vs打开、编译（我使用的是vs2017）  
 3、运行paper_checking.exe文件即可  
+重要提示：如果运行时报pdfbox相关错误可将引用中的pdfbox-app.dll删掉重新添加，然后尝试重新编译。  
 
 #### 项目介绍与功能说明
 该系统目前支持对简体中文的论文进行横向查重和纵向查重。  
 两个核心功能点说明如下:  
 1、纵向查重  
-选择一批待查重论文后，将该批论文和论文库中的历年论文进行查重比对，用以检查该批论文有没有抄袭往年论文的情况。该过程较慢，查重过程中查重按钮就会变灰，查重完毕即恢复正常，请耐心等待。  
+选择一批待查重论文后，将该批论文和论文库中的历年论文进行查重比对，用以检查该批论文有没有抄袭往年论文的情况。查重过程中查重按钮就会变灰，查重完毕即恢复正常。  
 2、横向查重  
-选择一批待查重论文后，在该批次论文之间进行查重比对，用以检查该批次论文有没有论文之间互相抄袭的情况。该过程较慢，查重过程中查重按钮就会变灰，查重完毕即恢复正常，请耐心等待。  
+选择一批待查重论文后，在该批次论文之间进行查重比对，用以检查该批次论文有没有论文之间互相抄袭的情况。查重过程中查重按钮会变灰，查重完毕即恢复正常。  
   
 软件中涉及的其它功能点及名词解释如下：  
 1、添加到论文库：  
@@ -72,8 +73,8 @@
 
 
 #### 项目截图
-![image](https://github.com/tianlian0/aided_writing/blob/master/images/pic1.png)  
-![image](https://github.com/tianlian0/aided_writing/blob/master/images/pic2.png)  
+![image](https://github.com/tianlian0/paper_checking_system/blob/master/images/pic1.png)  
+![image](https://github.com/tianlian0/paper_checking_system/blob/master/images/pic2.png)  
 项目运行演示视频：链接：链接：https://pan.baidu.com/s/1VM9g4CT4nAwlZXOHePkoXQ 提取码：t059  
 
 #### 欢迎打赏
