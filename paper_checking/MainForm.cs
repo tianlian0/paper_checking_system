@@ -25,7 +25,7 @@ namespace paper_checking
         const string to_check_txt_paper = "toCheckTxtPaper/";
         const string report = "report/";
         const string report_data = "report/Data/";
-        const int min_bytes = 18000; //格式转换后文件的最小大小。可根据情况自行修改。
+        const int min_bytes = 8000; //格式转换后文件的最小大小。可根据情况自行修改。
         const int min_words = 100; //格式转换后文件内的最少字符数。可根据情况自行修改。
         const int max_words = 99998; //格式转换后文件内的最大字符数。不可修改。
         const string security_key = "Ubzrfax@3&Yl1rf&cw7ZE4zXsm8ZdIAtyJZ71L48f3yW*TXzylZq7Hqb1moG*xeQQnkFdkqYYXFfyPAS$CeETMw#1qDAPJehBM8";
@@ -58,9 +58,17 @@ namespace paper_checking
          */
         void txtfile_format(string text, string path)
         {
-            text = text.Replace("#", "").Replace('\r', '#').Replace('\n', '#');
-            text = Regex.Replace(text, @"[^\u4e00-\u9fa5\《\》\（\）\——\；\，\。\“\”\！\#]", "");
-            text = new Regex("[#]+").Replace(text, "@").Trim();
+            if (path.ToLower().EndsWith(".doc.txt") || path.ToLower().EndsWith(".docx.txt") || path.ToLower().EndsWith(".txt.txt"))
+            {
+                text = text.Replace("#", "").Replace('\r', '#').Replace('\n', '#');
+                text = Regex.Replace(text, @"[^\u4e00-\u9fa5\《\》\（\）\——\；\，\。\“\”\！\#]", "");
+                text = new Regex("[#]+").Replace(text, "@").Trim();
+            }
+            else
+            {
+                text = Regex.Replace(text, @"[^\u4e00-\u9fa5\《\》\（\）\——\；\，\。\“\”\！]", "");
+                text = Regex.Replace(text, @"\s", string.Empty);
+            }
             //text = Regex.Replace(text, @"\s", string.Empty);
             //str1 = Regex.Replace(Regex.Replace(str1, "(?<=[\u4e00-\u9fa5])\\s+(?=[\u4e00-\u9fa5])", string.Empty), "(?<=[a-z])\\s+(?=[a-z])", " ");
 
@@ -79,8 +87,12 @@ namespace paper_checking
             else if (1.0 * text.IndexOf("序言") / text.Length < 0.1)
                 text = text.Substring(text.IndexOf("序言") + 2);
 
-            if (text.LastIndexOf("参考文献") > 0 && 1.0 * text.LastIndexOf("参考文献") / text.Length > 0.8)
+            int cntckwx = 0;
+            while (text.LastIndexOf("参考文献") > 0 && 1.0 * text.LastIndexOf("参考文献") / text.Length > 0.85 && cntckwx < 3)
+            {
                 text = text.Substring(0, text.LastIndexOf("参考文献"));
+                cntckwx++;
+            }
 
             text = text.Replace("（）", "").Replace("“”", "").Replace("，，", "，");
 
@@ -89,6 +101,7 @@ namespace paper_checking
                 text = text.Substring(0, max_words);
             }
 
+            text = text.Trim("@".ToCharArray());
             File.WriteAllText(path, text, Encoding.GetEncoding("GBK"));
         }
 
@@ -102,7 +115,7 @@ namespace paper_checking
             {
                 if (show)
                 {
-                    error_msg.Append("\r\n可能是以下原因导致：\r\n1、pdf或word文件存在只读密码或打开密码，请将密码取消。\r\n" +
+                    error_msg.Append("\r\n可能是以下原因导致：\r\n1、pdf或word文件存在只读密码、打开密码或防复制保护，请将保护取消。\r\n" +
                                     "2、pdf或word文件为图片或扫描件。系统无法对扫描件和图片进行查重，建议使用office word来生成pdf。\r\n" +
                                     "3、出错文件已经损坏无法正常打开，请尝试将上述文件诸葛打开检查。\r\n" +
                                     "4、出错的word文件为非标文件，请使用office word打开，另存为新的word文件后再进行查重。");
@@ -167,10 +180,12 @@ namespace paper_checking
             textBox7.Enabled = state;
             groupBox1.Enabled = state;
             groupBox2.Enabled = state;
+            button1.Enabled = state;
             button3.Enabled = state;
             button5.Enabled = state;
             button6.Enabled = state;
             button12.Enabled = state;
+            button13.Enabled = state;
             checkBox1.Enabled = state;
             checkBox7.Enabled = state;
             comboBox1.Enabled = state;
@@ -253,7 +268,7 @@ namespace paper_checking
                 FileInfo NextFile = fileInfo[FileInfoNo];
 
                 string path = sourceFolder.FullName + "\\" + NextFile.Name;
-                String t = textFolder.FullName + "\\" + NextFile.Name + ".txt";
+                string t = textFolder.FullName + "\\" + NextFile.Name + ".txt";
 
                 if (File.Exists(t))
                 {
@@ -349,13 +364,13 @@ namespace paper_checking
                 delete_check_data_file();
             }
 
-            Thread t1 = new Thread(new ParameterizedThreadStart(start_convert_PDF));
-            string[] param = new string[4] { textBox9.Text, paper_source, txt_paper_source, "0" };
-            t1.Start(param);
-            t1.Join();
+            //Thread t1 = new Thread(new ParameterizedThreadStart(start_convert_PDF));
+            //string[] param = new string[4] { textBox9.Text, paper_source, txt_paper_source, "0" };
+            //t1.Start(param);
+            //t1.Join();
 
             Thread t2 = new Thread(new ParameterizedThreadStart(start_convert_PDF));
-            param = new string[4] { textBox9.Text, to_check_paper, to_check_txt_paper, "0" };
+            string[] param = new string[4] { textBox9.Text, to_check_paper, to_check_txt_paper, "0" };
             t2.Start(param);
             t2.Join();
 
