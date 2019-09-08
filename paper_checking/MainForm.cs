@@ -661,7 +661,7 @@ namespace paper_checking
 
         private void button9_Click(object sender, EventArgs e)
         {
-            int processorCount = Environment.ProcessorCount - 1;
+            int processorCount = Environment.ProcessorCount - 2;
             if (processorCount > 1)
             {
                 textBox8.Text = processorCount.ToString();
