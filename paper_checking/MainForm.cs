@@ -30,7 +30,7 @@ namespace paper_checking
         const int max_words = 99998; //格式转换后文件内的最大字符数。不可修改。
         const string security_key = "Ubzrfax@3&Yl1rf&cw7ZE4zXsm8ZdIAtyJZ71L48f3yW*TXzylZq7Hqb1moG*xeQQnkFdkqYYXFfyPAS$CeETMw#1qDAPJehBM8";
 
-        string get_text_from_pdf_by_pdfbox(string path)
+        string Get_text_from_pdf_by_pdfbox(string path)
         {
             PDDocument pdffile = PDDocument.load(new java.io.File(path));
             PDFTextStripper pdfStripper = new PDFTextStripper();
@@ -40,7 +40,7 @@ namespace paper_checking
             return text;
         }
 
-        string get_text_from_word_by_spire(string path, Spire.Doc.Document doc)
+        string Get_text_from_word_by_spire(string path, Spire.Doc.Document doc)
         {
             doc.LoadFromFile(path);
             try
@@ -56,13 +56,13 @@ namespace paper_checking
         /*
          * 去除特殊字符、目录和参考文献
          */
-        void txtfile_format(string text, string path)
+        void Txtfile_format(string text, string path)
         {
             if (path.ToLower().EndsWith(".doc.txt") || path.ToLower().EndsWith(".docx.txt") || path.ToLower().EndsWith(".txt.txt"))
             {
                 text = text.Replace("#", "").Replace('\r', '#').Replace('\n', '#');
                 text = Regex.Replace(text, @"[^\u4e00-\u9fa5\《\》\（\）\——\；\，\。\“\”\！\#]", "");
-                text = new Regex("[#]+").Replace(text, "@").Trim();
+                text = new Regex("[#]+").Replace(text, "@@").Trim();
             }
             else
             {
@@ -108,8 +108,8 @@ namespace paper_checking
         /*
          * 报错信息
          */
-        StringBuilder error_msg = new StringBuilder("以下论文出现错误，请检查：\r\n");
-        void show_convert_error(bool show)
+        private StringBuilder error_msg = new StringBuilder("以下论文出现错误，请检查：\r\n");
+        void Show_convert_error(bool show)
         {
             if (error_msg.Length > 15)
             {
@@ -130,7 +130,7 @@ namespace paper_checking
         /*
          * 创建存放论文和论文库的文件夹
          */
-        void folder_check_and_recover()
+        void Folder_check_and_recover()
         {
             try
             {
@@ -154,7 +154,7 @@ namespace paper_checking
             }
         }
 
-        public bool is_unsign(string value)
+        public bool Is_unsign(string value)
         {
             return Regex.IsMatch(value, @"^\d*[.]?\d*$");
         }
@@ -162,20 +162,20 @@ namespace paper_checking
         /*
          * 配置文件缺失
          */
-        void config_check_and_recover()
+        void Config_check_and_recover()
         {
-            if (textBox7.Text == "" || !is_unsign(textBox7.Text) || textBox7.Text.Length > 2)
+            if (textBox7.Text == "" || !Is_unsign(textBox7.Text) || textBox7.Text.Length > 2)
                 textBox7.Text = "12";
-            if (textBox8.Text == "" || !is_unsign(textBox8.Text) || textBox7.Text.Length > 2)
+            if (textBox8.Text == "" || !Is_unsign(textBox8.Text) || textBox7.Text.Length > 2)
                 textBox8.Text = "3";
-            if (textBox9.Text == "" || !is_unsign(textBox9.Text) || textBox7.Text.Length > 2)
+            if (textBox9.Text == "" || !Is_unsign(textBox9.Text) || textBox7.Text.Length > 2)
                 textBox9.Text = "2";
         }
 
         /*
          * 界面控制
          */
-        public void set_component_state(bool state)
+        public void Set_component_state(bool state)
         {
             textBox7.Enabled = state;
             groupBox1.Enabled = state;
@@ -194,7 +194,7 @@ namespace paper_checking
         /*
          * 删除数据并无视异常
          */
-        public void delete_check_data_file()
+        public void Delete_check_data_file()
         {
             try
             {
@@ -220,20 +220,20 @@ namespace paper_checking
         /*
          * 重置
          */
-        public void clear_env_data_file()
+        public void Clear_env_data_file()
         {
             DialogResult dr = MessageBox.Show("重置后系统将关闭，是否继续重置？", "重置系统", MessageBoxButtons.OKCancel);
             if (dr != DialogResult.OK)
                 return;
 
-            delete_check_data_file();
-            force_stop();
+            Delete_check_data_file();
+            Force_stop();
         }
 
         /*
          * 导出重率统计表
          */
-        public void export_table_report(string path)
+        public void Export_table_report(string path)
         {
             DirectoryInfo data_floder = new DirectoryInfo(report_data);
             StringBuilder table_report = new StringBuilder("文件名, 重复率（%）\r\n");
@@ -246,7 +246,7 @@ namespace paper_checking
             File.WriteAllText(path + "\\重率统计表.csv", table_report.ToString(), Encoding.GetEncoding("GBK"));
         }
 
-        public void convert_PDF(object p_arr)
+        public void Convert_PDF(object p_arr)
         {
             string[] param = (string[])p_arr;
             int taskNo = int.Parse(param[0].ToString());
@@ -279,23 +279,23 @@ namespace paper_checking
                 {
                     if (path.ToLower().EndsWith(".pdf") && checkBox2.Checked)
                     {
-                        string text = get_text_from_pdf_by_pdfbox(path);
-                        txtfile_format(text, t);
+                        string text = Get_text_from_pdf_by_pdfbox(path);
+                        Txtfile_format(text, t);
                     }
                     else if (path.ToLower().EndsWith(".txt") && checkBox5.Checked)
                     {
                         string text = File.ReadAllText(path, Encoding.GetEncoding("GBK"));
-                        txtfile_format(text, t);
+                        Txtfile_format(text, t);
                     }
                     else if(path.ToLower().EndsWith(".doc") && checkBox3.Checked)
                     {
-                        string text = get_text_from_word_by_spire(path, doc);
-                        txtfile_format(text, t);
+                        string text = Get_text_from_word_by_spire(path, doc);
+                        Txtfile_format(text, t);
                     }
                     else if (path.ToLower().EndsWith(".docx") && checkBox4.Checked)
                     {
-                        string text = get_text_from_word_by_spire(path, doc);
-                        txtfile_format(text, t);
+                        string text = Get_text_from_word_by_spire(path, doc);
+                        Txtfile_format(text, t);
                     }
                     else
                     {
@@ -318,7 +318,7 @@ namespace paper_checking
             }
         }
 
-        void start_convert_PDF(object p_arr)
+        void Start_convert_PDF(object p_arr)
         {
             button4.Enabled = false;
             button2.Enabled = false;
@@ -326,7 +326,7 @@ namespace paper_checking
             List<Thread> temp = new List<Thread>();
             for (int i = 0; i < int.Parse(part_param[0]); i++)
             {
-                Thread t1 = new Thread(new ParameterizedThreadStart(convert_PDF));
+                Thread t1 = new Thread(new ParameterizedThreadStart(Convert_PDF));
                 string[] param = new string[3] { i.ToString(), part_param[1], part_param[2] };
                 t1.Start(param);
                 temp.Add(t1);
@@ -338,30 +338,30 @@ namespace paper_checking
             temp.Clear();
             if (part_param[3].Equals("1"))
             {
-                show_convert_error(true);
+                Show_convert_error(true);
             }
             button4.Enabled = true;
             button2.Enabled = true;
         }
 
-        private void button_add_to_paper_library(object sender, EventArgs e)
+        private void Button_add_to_paper_library(object sender, EventArgs e)
         {
             if (button3.Enabled == false || button4.Enabled == false || int.Parse(textBox9.Text) <= 0)
             {
                 MessageBox.Show(this, "请等待当前任务完成后再进行论文库更新！");
                 return;
             }
-            Thread t1 = new Thread(new ParameterizedThreadStart(start_convert_PDF));
+            Thread t1 = new Thread(new ParameterizedThreadStart(Start_convert_PDF));
             string[] param = new string[4] { textBox9.Text, paper_source, txt_paper_source, "1" };
             t1.Start(param);
         }
 
-        public void check_paper_thread()
+        public void Check_paper_thread()
         {
-            set_component_state(false);
+            Set_component_state(false);
             if (checkBox1.Checked == false)
             {
-                delete_check_data_file();
+                Delete_check_data_file();
             }
 
             //Thread t1 = new Thread(new ParameterizedThreadStart(start_convert_PDF));
@@ -369,7 +369,7 @@ namespace paper_checking
             //t1.Start(param);
             //t1.Join();
 
-            Thread t2 = new Thread(new ParameterizedThreadStart(start_convert_PDF));
+            Thread t2 = new Thread(new ParameterizedThreadStart(Start_convert_PDF));
             string[] param = new string[4] { textBox9.Text, to_check_paper, to_check_txt_paper, "0" };
             t2.Start(param);
             t2.Join();
@@ -396,7 +396,7 @@ namespace paper_checking
                     startInfo.UseShellExecute = false;
                     myprocess.StartInfo = startInfo;
                     myprocess.EnableRaisingEvents = true;
-                    myprocess.Exited += new EventHandler(exep_exited);
+                    myprocess.Exited += new EventHandler(Exep_exited);
                     myprocess.Start();
                 }
                 catch
@@ -408,7 +408,7 @@ namespace paper_checking
 
         string ReportSavePath = "";
         Thread t111;
-        private void button_start_checking(object sender, EventArgs e)
+        private void Button_start_checking(object sender, EventArgs e)
         {
             if (int.Parse(textBox7.Text) <= 0 || int.Parse(textBox8.Text) <= 0 || int.Parse(textBox9.Text) <= 0)
             {
@@ -439,14 +439,14 @@ namespace paper_checking
             {
                 ReportSavePath = textBox1.Text;
             }
-            b_message();
-            t111 = new Thread(new ThreadStart(check_paper_thread));
+            B_message();
+            t111 = new Thread(new ThreadStart(Check_paper_thread));
             t111.Start();
         }
 
-        static Semaphore sem = new Semaphore(1, 1);
+        private static Semaphore sem = new Semaphore(1, 1);
         int curTSUM = 0;
-        void exep_exited(object sender, EventArgs e)
+        void Exep_exited(object sender, EventArgs e)
         {
             sem.WaitOne();
             curTSUM++;
@@ -460,19 +460,19 @@ namespace paper_checking
                 curTSUM = 0;
                 if (ReportSavePath != "")
                 {
-                    reporter(ReportSavePath);
+                    Reporter(ReportSavePath);
                 }
                 else
                 {
                     MessageBox.Show(this, "未选择文件夹，无法导出查重报告！");
                 }
-                show_convert_error(true);
-                set_component_state(true);
+                Show_convert_error(true);
+                Set_component_state(true);
             }
             sem.Release();
         }
 
-        private void button_look_report(object sender, EventArgs e)
+        private void Button_look_report(object sender, EventArgs e)
         {
             try
             {
@@ -482,7 +482,7 @@ namespace paper_checking
             catch { }
         }
 
-        private void reporter(string path)
+        private void Reporter(string path)
         {
             string exc = "以下论文的报告导出失败，请检查：";
 
@@ -506,7 +506,7 @@ namespace paper_checking
                 }
             }
             if (checkBox7.Checked) {
-                export_table_report(path);
+                Export_table_report(path);
             }
             TopMost = true;
             MessageBox.Show(this, "导出完成！");
@@ -518,19 +518,19 @@ namespace paper_checking
             ReportSavePath = "";
         }
 
-        private void button_export_report(object sender, EventArgs e)
+        private void Button_export_report(object sender, EventArgs e)
         {
             FolderBrowserDialog dialog = new FolderBrowserDialog();
             if (dialog.ShowDialog() == DialogResult.OK)
             {
-                reporter(dialog.SelectedPath);
+                Reporter(dialog.SelectedPath);
             }
         }
 
         /*
          * 阻止数字以外的字符输入
          */
-        private void textBox7_KeyPress(object sender, KeyPressEventArgs e)
+        private void TextBox7_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar != 8 && !char.IsDigit(e.KeyChar))
                 e.Handled = true;
@@ -577,7 +577,7 @@ namespace paper_checking
 
             if (button3.Enabled == false || button2.Enabled == false)
             {
-                force_stop();
+                Force_stop();
             }
         }
 
@@ -614,13 +614,13 @@ namespace paper_checking
             }
             else
             {
-                button9_Click(sender, e);
+                Button9_Click(sender, e);
             }
-            config_check_and_recover();
-            folder_check_and_recover();
+            Config_check_and_recover();
+            Folder_check_and_recover();
         }
 
-        private void force_stop()
+        private void Force_stop()
         {
             if (button3.Enabled == false || button2.Enabled == false)
             {
@@ -650,7 +650,7 @@ namespace paper_checking
             Environment.Exit(0);
         }
 
-        private void button_select_path2(object sender, EventArgs e)
+        private void Button_select_path2(object sender, EventArgs e)
         {
             FolderBrowserDialog dialog = new FolderBrowserDialog();
             if (dialog.ShowDialog() == DialogResult.OK)
@@ -659,7 +659,7 @@ namespace paper_checking
             }
         }
 
-        private void button9_Click(object sender, EventArgs e)
+        private void Button9_Click(object sender, EventArgs e)
         {
             int processorCount = Environment.ProcessorCount - 2;
             if (processorCount > 1)
@@ -674,17 +674,17 @@ namespace paper_checking
             }
         }
 
-        private void button_reset_system(object sender, EventArgs e)
+        private void Button_reset_system(object sender, EventArgs e)
         {
-            clear_env_data_file();
+            Clear_env_data_file();
         }
 
         private void button_force_stop(object sender, EventArgs e)
         {
-            force_stop();
+            Force_stop();
         }
 
-        private void button_select_path1(object sender, EventArgs e)
+        private void Button_select_path1(object sender, EventArgs e)
         {
             FolderBrowserDialog dialog = new FolderBrowserDialog();
             if (dialog.ShowDialog() == DialogResult.OK)
@@ -694,7 +694,7 @@ namespace paper_checking
             }
         }
 
-        private void button_select_path3(object sender, EventArgs e)
+        private void Button_select_path3(object sender, EventArgs e)
         {
             FolderBrowserDialog dialog = new FolderBrowserDialog();
             if (dialog.ShowDialog() == DialogResult.OK)
@@ -709,7 +709,7 @@ namespace paper_checking
             new Licence().ShowDialog();
         }
 
-        private void b_message()
+        private void B_message()
         {
             string[] cfiles = Directory.GetFiles(textBox5.Text); 
             string[] sfiles = Directory.GetFiles(txt_paper_source);

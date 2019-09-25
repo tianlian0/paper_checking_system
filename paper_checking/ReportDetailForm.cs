@@ -66,8 +66,8 @@ namespace paper_checking
             StreamReader file3 = new StreamReader(paperPath, Encoding.Default);
             while ((line2 = file3.ReadLine()) != null)
             {
-                if (line2 != "")
-                    sourceFile2.Append(line2.Replace("@","\r\n") + "\r\n\r\n");
+                if (line2.Trim() != "")
+                    sourceFile2.Append(line2.Replace("@@","\r\n") + "\r\n\r\n");
             }
             file3.Close();
 

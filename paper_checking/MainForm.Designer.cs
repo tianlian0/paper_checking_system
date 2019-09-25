@@ -137,7 +137,7 @@
             this.button13.TabIndex = 33;
             this.button13.Text = "...";
             this.button13.UseVisualStyleBackColor = true;
-            this.button13.Click += new System.EventHandler(this.button_select_path1);
+            this.button13.Click += new System.EventHandler(this.Button_select_path1);
             // 
             // textBox5
             // 
@@ -222,7 +222,7 @@
             this.button1.TabIndex = 4;
             this.button1.Text = "...";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button_select_path2);
+            this.button1.Click += new System.EventHandler(this.Button_select_path2);
             // 
             // textBox1
             // 
@@ -271,7 +271,7 @@
             this.textBox7.Size = new System.Drawing.Size(100, 23);
             this.textBox7.TabIndex = 1;
             this.textBox7.Text = "12";
-            this.textBox7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox7_KeyPress);
+            this.textBox7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox7_KeyPress);
             // 
             // button3
             // 
@@ -282,7 +282,7 @@
             this.button3.TabIndex = 5;
             this.button3.Text = "开始查重";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button_start_checking);
+            this.button3.Click += new System.EventHandler(this.Button_start_checking);
             // 
             // tabPage2
             // 
@@ -322,7 +322,7 @@
             this.button4.TabIndex = 36;
             this.button4.Text = "...";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button_select_path3);
+            this.button4.Click += new System.EventHandler(this.Button_select_path3);
             // 
             // textBox6
             // 
@@ -351,7 +351,7 @@
             this.button2.TabIndex = 0;
             this.button2.Text = "添加到论文库";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button_add_to_paper_library);
+            this.button2.Click += new System.EventHandler(this.Button_add_to_paper_library);
             // 
             // tabPage3
             // 
@@ -373,7 +373,7 @@
             this.button6.TabIndex = 1;
             this.button6.Text = "导出上一次查重报告";
             this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button_export_report);
+            this.button6.Click += new System.EventHandler(this.Button_export_report);
             // 
             // button5
             // 
@@ -384,7 +384,7 @@
             this.button5.TabIndex = 2;
             this.button5.Text = "查看上一次查重报告";
             this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button_look_report);
+            this.button5.Click += new System.EventHandler(this.Button_look_report);
             // 
             // tabPage4
             // 
@@ -416,7 +416,7 @@
             this.button10.TabIndex = 29;
             this.button10.Text = "重置系统";
             this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button_reset_system);
+            this.button10.Click += new System.EventHandler(this.Button_reset_system);
             // 
             // groupBox2
             // 
@@ -511,7 +511,7 @@
             this.button9.TabIndex = 28;
             this.button9.Text = "恢复默认";
             this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.button9.Click += new System.EventHandler(this.Button9_Click);
             // 
             // label7
             // 
