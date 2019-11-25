@@ -524,10 +524,11 @@
             // 
             // textBox9
             // 
+            this.textBox9.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textBox9.Location = new System.Drawing.Point(138, 63);
             this.textBox9.MaxLength = 2;
             this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 21);
+            this.textBox9.Size = new System.Drawing.Size(100, 23);
             this.textBox9.TabIndex = 25;
             this.textBox9.Text = "2";
             // 
@@ -580,7 +581,7 @@
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(47, 12);
             this.label16.TabIndex = 27;
-            this.label16.Text = "0.8.1.0";
+            this.label16.Text = "0.8.2.0";
             // 
             // button12
             // 

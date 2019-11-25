@@ -8,6 +8,7 @@ using System.Threading;
 using System.Diagnostics;
 using org.apache.pdfbox.pdmodel;
 using org.apache.pdfbox.text;
+using System.Runtime.InteropServices;
 
 namespace paper_checking
 {
@@ -25,10 +26,14 @@ namespace paper_checking
         const string to_check_txt_paper = "toCheckTxtPaper/";
         const string report = "report/";
         const string report_data = "report/Data/";
-        const int min_bytes = 8000; //格式转换后文件的最小大小。可根据情况自行修改。
-        const int min_words = 100; //格式转换后文件内的最少字符数。可根据情况自行修改。
+        const int min_bytes = 80; //格式转换后文件的最小大小。可根据情况自行修改。
+        const int min_words = 10; //格式转换后文件内的最少字符数。可根据情况自行修改。
         const int max_words = 99998; //格式转换后文件内的最大字符数。不可修改。
         const string security_key = "Ubzrfax@3&Yl1rf&cw7ZE4zXsm8ZdIAtyJZ71L48f3yW*TXzylZq7Hqb1moG*xeQQnkFdkqYYXFfyPAS$CeETMw#1qDAPJehBM8";
+
+        //DLL引用
+        [DllImport(@"paper_check.dll", EntryPoint = "real_check", SetLastError = true, CharSet = CharSet.Ansi, ExactSpelling = false, CallingConvention = CallingConvention.Cdecl)]
+        extern static int real_check(string s1, string s2, string s3, string s4, string s5, string s6, string s7, string s8);
 
         string Get_text_from_pdf_by_pdfbox(string path)
         {
@@ -356,6 +361,14 @@ namespace paper_checking
             t1.Start(param);
         }
 
+        //查重核心dll的多线程包装外壳
+        void real_check_shell(object p_arr)
+        {
+            string[] part_param = (string[])p_arr;
+            int res = real_check(part_param[0], part_param[1], part_param[2], part_param[3], part_param[4], part_param[5], part_param[6], part_param[7]);
+            Exep_exited(res);
+        }
+
         public void Check_paper_thread()
         {
             Set_component_state(false);
@@ -363,11 +376,6 @@ namespace paper_checking
             {
                 Delete_check_data_file();
             }
-
-            //Thread t1 = new Thread(new ParameterizedThreadStart(start_convert_PDF));
-            //string[] param = new string[4] { textBox9.Text, paper_source, txt_paper_source, "0" };
-            //t1.Start(param);
-            //t1.Join();
 
             Thread t2 = new Thread(new ParameterizedThreadStart(Start_convert_PDF));
             string[] param = new string[4] { textBox9.Text, to_check_paper, to_check_txt_paper, "0" };
@@ -378,32 +386,24 @@ namespace paper_checking
             {
                 try
                 {
-                    Process myprocess = new Process();
-                    string start_param;
+                    string[] real_check_param;
                     if (comboBox1.SelectedIndex == 1)
                     {
-                        start_param = (textBox7.Text + " " + textBox8.Text + " " + i.ToString() + " " + security_key + " "
-                            + to_check_txt_paper + " " + to_check_txt_paper + " " + report + " " + report_data).Trim();
+                        real_check_param = new string[8] { textBox7.Text, textBox8.Text, i.ToString(), security_key, to_check_txt_paper, to_check_txt_paper, report, report_data };
                     }
                     else
                     {
-                        start_param = (textBox7.Text + " " + textBox8.Text + " " + i.ToString() + " " + security_key + " "
-                            + to_check_txt_paper + " " + txt_paper_source + " " + report + " " + report_data).Trim();
+                        real_check_param = new string[8] { textBox7.Text, textBox8.Text, i.ToString(), security_key, to_check_txt_paper, txt_paper_source, report, report_data };
                     }
-                    ProcessStartInfo startInfo = new ProcessStartInfo("xc_core.exe", start_param);
-                    startInfo.WindowStyle = ProcessWindowStyle.Hidden;
-                    startInfo.CreateNoWindow = true;
-                    startInfo.UseShellExecute = false;
-                    myprocess.StartInfo = startInfo;
-                    myprocess.EnableRaisingEvents = true;
-                    myprocess.Exited += new EventHandler(Exep_exited);
-                    myprocess.Start();
+                    Thread real_check_t = new Thread(new ParameterizedThreadStart(real_check_shell));
+                    real_check_t.Start(real_check_param);
                 }
-                catch
+                catch (Exception e)
                 {
                     MessageBox.Show(this, i.ToString() + "号线程执行失败，请检查xc_core文件是否存在！");
                 }
             }
+
         }
 
         string ReportSavePath = "";
@@ -446,12 +446,11 @@ namespace paper_checking
 
         private static Semaphore sem = new Semaphore(1, 1);
         int curTSUM = 0;
-        void Exep_exited(object sender, EventArgs e)
+        void Exep_exited(int res)
         {
             sem.WaitOne();
             curTSUM++;
-            Process process = (Process)sender;
-            if (process.ExitCode != 0)
+            if (res != 0)
             {
                 MessageBox.Show(this, "存在未知的查重失败，请排查：待查论文是否有错误的格式？查重系统key文件是否存在？");
             }
@@ -468,6 +467,7 @@ namespace paper_checking
                 }
                 Show_convert_error(true);
                 Set_component_state(true);
+                GC.Collect();
             }
             sem.Release();
         }
