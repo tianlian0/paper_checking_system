@@ -125,9 +125,10 @@ namespace paper_checking
                 i++;
             }
 
+            int minvalue = Math.Max((int)(0.3 * totalWords / 575), 1);
             for (int p = 0; p < 575; p++)
             {
-                if (bucket[p] >= (int)(0.3 * totalWords / 575))
+                if (bucket[p] >= minvalue)
                 {
                     p01.X = p;
                     p02.X = p;

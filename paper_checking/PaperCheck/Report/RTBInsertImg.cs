@@ -10,10 +10,7 @@ using System.IO;
 
 namespace RTF_Operation
 {
-    /// <summary> 
-       /// RichTextBox插入图片使用的静态类 
-       /// 资料来源:www.baidu.com 
-       /// </summary> 
+
     public class RTB_InsertImg
     {
         public const int

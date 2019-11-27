@@ -219,6 +219,13 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PaperCheck\Convert\ConvertCore.cs" />
+    <Compile Include="PaperCheck\Convert\ConverterFactory.cs" />
+    <Compile Include="PaperCheck\Convert\PdfConverter.cs" />
+    <Compile Include="PaperCheck\Convert\TxtConverter.cs" />
+    <Compile Include="PaperCheck\Convert\WordConverter.cs" />
+    <Compile Include="PaperCheck\PaperManager.cs" />
+    <Compile Include="PaperCheck\Utils.cs" />
     <Compile Include="ReportDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -233,9 +240,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RTBInsertImg.cs" />
-    <Compile Include="RunningEnv.cs" />
-    <Compile Include="Util.cs" />
+    <Compile Include="PaperCheck\Report\RTBInsertImg.cs" />
+    <Compile Include="PaperCheck\RunningEnv.cs" />
+    <Compile Include="RegUtil.cs" />
     <EmbeddedResource Include="Licence.resx">
       <DependentUpon>Licence.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -318,6 +325,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>Copy /y "$(ProjectDir)paper_check.dll" "$(ProjectDir)$(OutDir)"

@@ -16,19 +16,25 @@ namespace paper_checking
         static void Main()
         {
 
-            Boolean createdNew;
-            System.Threading.Mutex instance = new System.Threading.Mutex(true, "CachongSingleStart0.8", out createdNew); //同步基元变量 
+            System.Threading.Mutex instance = new System.Threading.Mutex(true, "CachongSingleStart0.9", out bool createdNew);
             if (createdNew)
             {
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
                 try
                 {
-                    Application.Run(new Form1());
-                    instance.ReleaseMutex();
+                    Application.Run(new MainForm());
                 }
                 catch (Exception)
                 { }
+                finally
+                {
+                    if (instance != null)
+                    {
+                        instance.ReleaseMutex();
+                        instance.Close();
+                    }
+                }
             }
             else
             {

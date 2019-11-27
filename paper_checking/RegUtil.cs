@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace paper_checking
 {
-    static class Util
+    static class RegUtil
     {
-        /// RSA签名验证    
+           
         public static bool SignatureDeformatter(string strKeyPublic, string strHashbyteDeformatter, string strDeformatterData)
         {
             try
@@ -133,11 +133,6 @@ namespace paper_checking
                     return Convert.ToBase64String(encryptedBytes);
                 }
             }
-        }
-
-        public static bool isUnsign(string value)
-        {
-            return Regex.IsMatch(value, @"^\d*[.]?\d*$");
         }
 
     }

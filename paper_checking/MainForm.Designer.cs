@@ -1,6 +1,6 @@
 ﻿namespace paper_checking
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// 必需的设计器变量。
@@ -28,52 +28,59 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.button13 = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.pbCheckingProgress = new System.Windows.Forms.ProgressBar();
+            this.btnToCheckPaperPath = new System.Windows.Forms.Button();
+            this.txtToCheckPaperPath = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
+            this.chkStatisTable = new System.Windows.Forms.CheckBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.button11 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnForceStop = new System.Windows.Forms.Button();
+            this.cmbCheckWay = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnFinalReportPath = new System.Windows.Forms.Button();
+            this.txtFinalReportPath = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.chkRecover = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.txtCheckThreshold = new System.Windows.Forms.TextBox();
+            this.btnStartChecking = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.textBox10 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.btnPaperSourcePath = new System.Windows.Forms.Button();
+            this.txtPaperSourcePath = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnAddLibrary = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnExportReport = new System.Windows.Forms.Button();
+            this.btnShowReportList = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnRestoreDefault2 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtMinBytes = new System.Windows.Forms.TextBox();
+            this.txtMinWords = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button10 = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.chkSuportTxt = new System.Windows.Forms.CheckBox();
+            this.chkSuportDocx = new System.Windows.Forms.CheckBox();
+            this.chkSuportPdf = new System.Windows.Forms.CheckBox();
+            this.chkSuportDoc = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button9 = new System.Windows.Forms.Button();
+            this.btnRestoreDefault1 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtConvertThreadCnt = new System.Windows.Forms.TextBox();
+            this.txtCheckThreadCnt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.button12 = new System.Windows.Forms.Button();
+            this.btnShowLicence = new System.Windows.Forms.Button();
             this.label23 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -82,6 +89,7 @@
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -105,21 +113,23 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.button13);
-            this.tabPage1.Controls.Add(this.textBox5);
+            this.tabPage1.Controls.Add(this.label5);
+            this.tabPage1.Controls.Add(this.pbCheckingProgress);
+            this.tabPage1.Controls.Add(this.btnToCheckPaperPath);
+            this.tabPage1.Controls.Add(this.txtToCheckPaperPath);
             this.tabPage1.Controls.Add(this.label20);
-            this.tabPage1.Controls.Add(this.checkBox7);
+            this.tabPage1.Controls.Add(this.chkStatisTable);
             this.tabPage1.Controls.Add(this.label11);
-            this.tabPage1.Controls.Add(this.button11);
-            this.tabPage1.Controls.Add(this.comboBox1);
+            this.tabPage1.Controls.Add(this.btnForceStop);
+            this.tabPage1.Controls.Add(this.cmbCheckWay);
             this.tabPage1.Controls.Add(this.label9);
-            this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Controls.Add(this.btnFinalReportPath);
+            this.tabPage1.Controls.Add(this.txtFinalReportPath);
             this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.checkBox1);
+            this.tabPage1.Controls.Add(this.chkRecover);
             this.tabPage1.Controls.Add(this.label6);
-            this.tabPage1.Controls.Add(this.textBox7);
-            this.tabPage1.Controls.Add(this.button3);
+            this.tabPage1.Controls.Add(this.txtCheckThreshold);
+            this.tabPage1.Controls.Add(this.btnStartChecking);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -128,169 +138,186 @@
             this.tabPage1.Text = "查重";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // button13
+            // label5
             // 
-            this.button13.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button13.Location = new System.Drawing.Point(320, 126);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(42, 25);
-            this.button13.TabIndex = 33;
-            this.button13.Text = "...";
-            this.button13.UseVisualStyleBackColor = true;
-            this.button13.Click += new System.EventHandler(this.Button_select_path1);
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label5.Location = new System.Drawing.Point(196, 176);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(53, 12);
+            this.label5.TabIndex = 37;
+            this.label5.Text = "查重进度";
             // 
-            // textBox5
+            // pbCheckingProgress
             // 
-            this.textBox5.Location = new System.Drawing.Point(214, 128);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(100, 21);
-            this.textBox5.TabIndex = 35;
+            this.pbCheckingProgress.Location = new System.Drawing.Point(49, 191);
+            this.pbCheckingProgress.Name = "pbCheckingProgress";
+            this.pbCheckingProgress.Size = new System.Drawing.Size(348, 23);
+            this.pbCheckingProgress.TabIndex = 36;
+            // 
+            // btnToCheckPaperPath
+            // 
+            this.btnToCheckPaperPath.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnToCheckPaperPath.Location = new System.Drawing.Point(320, 101);
+            this.btnToCheckPaperPath.Name = "btnToCheckPaperPath";
+            this.btnToCheckPaperPath.Size = new System.Drawing.Size(42, 25);
+            this.btnToCheckPaperPath.TabIndex = 33;
+            this.btnToCheckPaperPath.Text = "...";
+            this.btnToCheckPaperPath.UseVisualStyleBackColor = true;
+            this.btnToCheckPaperPath.Click += new System.EventHandler(this.ButtonSelectToCheckPaperPath);
+            // 
+            // txtToCheckPaperPath
+            // 
+            this.txtToCheckPaperPath.Location = new System.Drawing.Point(214, 103);
+            this.txtToCheckPaperPath.Name = "txtToCheckPaperPath";
+            this.txtToCheckPaperPath.ReadOnly = true;
+            this.txtToCheckPaperPath.Size = new System.Drawing.Size(100, 21);
+            this.txtToCheckPaperPath.TabIndex = 35;
             // 
             // label20
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label20.Location = new System.Drawing.Point(73, 131);
+            this.label20.Location = new System.Drawing.Point(73, 106);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(135, 12);
             this.label20.TabIndex = 34;
             this.label20.Text = "待查论文所在的文件夹";
             // 
-            // checkBox7
+            // chkStatisTable
             // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Checked = true;
-            this.checkBox7.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox7.Location = new System.Drawing.Point(146, 286);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(84, 16);
-            this.checkBox7.TabIndex = 32;
-            this.checkBox7.Text = "生成统计表";
-            this.checkBox7.UseVisualStyleBackColor = true;
+            this.chkStatisTable.AutoSize = true;
+            this.chkStatisTable.Checked = true;
+            this.chkStatisTable.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkStatisTable.Location = new System.Drawing.Point(146, 302);
+            this.chkStatisTable.Name = "chkStatisTable";
+            this.chkStatisTable.Size = new System.Drawing.Size(84, 16);
+            this.chkStatisTable.TabIndex = 32;
+            this.chkStatisTable.Text = "生成统计表";
+            this.chkStatisTable.UseVisualStyleBackColor = true;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label11.Location = new System.Drawing.Point(332, 259);
+            this.label11.Location = new System.Drawing.Point(332, 275);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(65, 12);
             this.label11.TabIndex = 31;
             this.label11.Text = "（不推荐）";
             // 
-            // button11
+            // btnForceStop
             // 
-            this.button11.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button11.Location = new System.Drawing.Point(326, 229);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(74, 27);
-            this.button11.TabIndex = 30;
-            this.button11.Text = "强制退出";
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button_force_stop);
+            this.btnForceStop.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnForceStop.Location = new System.Drawing.Point(326, 245);
+            this.btnForceStop.Name = "btnForceStop";
+            this.btnForceStop.Size = new System.Drawing.Size(74, 27);
+            this.btnForceStop.TabIndex = 30;
+            this.btnForceStop.Text = "强制退出";
+            this.btnForceStop.UseVisualStyleBackColor = true;
+            this.btnForceStop.Click += new System.EventHandler(this.ButtonForceStop);
             // 
-            // comboBox1
+            // cmbCheckWay
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbCheckWay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCheckWay.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cmbCheckWay.FormattingEnabled = true;
+            this.cmbCheckWay.Items.AddRange(new object[] {
             "纵向查重",
             "横向查重"});
-            this.comboBox1.Location = new System.Drawing.Point(214, 52);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(100, 24);
-            this.comboBox1.TabIndex = 29;
+            this.cmbCheckWay.Location = new System.Drawing.Point(214, 27);
+            this.cmbCheckWay.Name = "cmbCheckWay";
+            this.cmbCheckWay.Size = new System.Drawing.Size(100, 24);
+            this.cmbCheckWay.TabIndex = 29;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label9.Location = new System.Drawing.Point(151, 59);
+            this.label9.Location = new System.Drawing.Point(151, 34);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(57, 12);
             this.label9.TabIndex = 28;
             this.label9.Text = "查重方式";
             // 
-            // button1
+            // btnFinalReportPath
             // 
-            this.button1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new System.Drawing.Point(320, 161);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(42, 25);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "...";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button_select_path2);
+            this.btnFinalReportPath.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnFinalReportPath.Location = new System.Drawing.Point(320, 136);
+            this.btnFinalReportPath.Name = "btnFinalReportPath";
+            this.btnFinalReportPath.Size = new System.Drawing.Size(42, 25);
+            this.btnFinalReportPath.TabIndex = 4;
+            this.btnFinalReportPath.Text = "...";
+            this.btnFinalReportPath.UseVisualStyleBackColor = true;
+            this.btnFinalReportPath.Click += new System.EventHandler(this.ButtonSelectFinalReportPath);
             // 
-            // textBox1
+            // txtFinalReportPath
             // 
-            this.textBox1.Location = new System.Drawing.Point(214, 163);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(100, 21);
-            this.textBox1.TabIndex = 27;
+            this.txtFinalReportPath.Location = new System.Drawing.Point(214, 138);
+            this.txtFinalReportPath.Name = "txtFinalReportPath";
+            this.txtFinalReportPath.ReadOnly = true;
+            this.txtFinalReportPath.Size = new System.Drawing.Size(100, 21);
+            this.txtFinalReportPath.TabIndex = 27;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(73, 166);
+            this.label3.Location = new System.Drawing.Point(73, 141);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(135, 12);
             this.label3.TabIndex = 26;
             this.label3.Text = "保存查重报告的文件夹";
             // 
-            // checkBox1
+            // chkRecover
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(233, 286);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(72, 16);
-            this.checkBox1.TabIndex = 6;
-            this.checkBox1.Text = "中断恢复";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkRecover.AutoSize = true;
+            this.chkRecover.Location = new System.Drawing.Point(233, 302);
+            this.chkRecover.Name = "chkRecover";
+            this.chkRecover.Size = new System.Drawing.Size(72, 16);
+            this.chkRecover.TabIndex = 6;
+            this.chkRecover.Text = "中断恢复";
+            this.chkRecover.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label6.Location = new System.Drawing.Point(151, 96);
+            this.label6.Location = new System.Drawing.Point(151, 71);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(57, 12);
             this.label6.TabIndex = 16;
             this.label6.Text = "查重阈值";
             // 
-            // textBox7
+            // txtCheckThreshold
             // 
-            this.textBox7.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox7.Location = new System.Drawing.Point(214, 91);
-            this.textBox7.MaxLength = 2;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 23);
-            this.textBox7.TabIndex = 1;
-            this.textBox7.Text = "12";
-            this.textBox7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox7_KeyPress);
+            this.txtCheckThreshold.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtCheckThreshold.Location = new System.Drawing.Point(214, 66);
+            this.txtCheckThreshold.MaxLength = 2;
+            this.txtCheckThreshold.Name = "txtCheckThreshold";
+            this.txtCheckThreshold.Size = new System.Drawing.Size(100, 23);
+            this.txtCheckThreshold.TabIndex = 1;
+            this.txtCheckThreshold.Text = "12";
+            this.txtCheckThreshold.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DigitFilterKeyPress);
             // 
-            // button3
+            // btnStartChecking
             // 
-            this.button3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button3.Location = new System.Drawing.Point(118, 214);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(202, 66);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "开始查重";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.Button_start_checking);
+            this.btnStartChecking.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnStartChecking.Location = new System.Drawing.Point(118, 230);
+            this.btnStartChecking.Name = "btnStartChecking";
+            this.btnStartChecking.Size = new System.Drawing.Size(202, 66);
+            this.btnStartChecking.TabIndex = 5;
+            this.btnStartChecking.Text = "开始查重";
+            this.btnStartChecking.UseVisualStyleBackColor = true;
+            this.btnStartChecking.Click += new System.EventHandler(this.ButtonStartChecking);
             // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.textBox10);
-            this.tabPage2.Controls.Add(this.button4);
-            this.tabPage2.Controls.Add(this.textBox6);
+            this.tabPage2.Controls.Add(this.btnPaperSourcePath);
+            this.tabPage2.Controls.Add(this.txtPaperSourcePath);
             this.tabPage2.Controls.Add(this.label21);
-            this.tabPage2.Controls.Add(this.button2);
+            this.tabPage2.Controls.Add(this.btnAddLibrary);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -313,24 +340,24 @@
             this.textBox10.TabIndex = 39;
             this.textBox10.Text = resources.GetString("textBox10.Text");
             // 
-            // button4
+            // btnPaperSourcePath
             // 
-            this.button4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button4.Location = new System.Drawing.Point(325, 222);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(42, 25);
-            this.button4.TabIndex = 36;
-            this.button4.Text = "...";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.Button_select_path3);
+            this.btnPaperSourcePath.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnPaperSourcePath.Location = new System.Drawing.Point(325, 222);
+            this.btnPaperSourcePath.Name = "btnPaperSourcePath";
+            this.btnPaperSourcePath.Size = new System.Drawing.Size(42, 25);
+            this.btnPaperSourcePath.TabIndex = 36;
+            this.btnPaperSourcePath.Text = "...";
+            this.btnPaperSourcePath.UseVisualStyleBackColor = true;
+            this.btnPaperSourcePath.Click += new System.EventHandler(this.ButtonSelectPaperSourcePath);
             // 
-            // textBox6
+            // txtPaperSourcePath
             // 
-            this.textBox6.Location = new System.Drawing.Point(219, 224);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(100, 21);
-            this.textBox6.TabIndex = 38;
+            this.txtPaperSourcePath.Location = new System.Drawing.Point(219, 224);
+            this.txtPaperSourcePath.Name = "txtPaperSourcePath";
+            this.txtPaperSourcePath.ReadOnly = true;
+            this.txtPaperSourcePath.Size = new System.Drawing.Size(100, 21);
+            this.txtPaperSourcePath.TabIndex = 38;
             // 
             // label21
             // 
@@ -342,21 +369,21 @@
             this.label21.TabIndex = 37;
             this.label21.Text = "待添加论文所在的文件夹";
             // 
-            // button2
+            // btnAddLibrary
             // 
-            this.button2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button2.Location = new System.Drawing.Point(157, 260);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(135, 53);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "添加到论文库";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.Button_add_to_paper_library);
+            this.btnAddLibrary.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnAddLibrary.Location = new System.Drawing.Point(157, 260);
+            this.btnAddLibrary.Name = "btnAddLibrary";
+            this.btnAddLibrary.Size = new System.Drawing.Size(135, 53);
+            this.btnAddLibrary.TabIndex = 0;
+            this.btnAddLibrary.Text = "添加到论文库";
+            this.btnAddLibrary.UseVisualStyleBackColor = true;
+            this.btnAddLibrary.Click += new System.EventHandler(this.ButtonAddLibrary);
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.button6);
-            this.tabPage3.Controls.Add(this.button5);
+            this.tabPage3.Controls.Add(this.btnExportReport);
+            this.tabPage3.Controls.Add(this.btnShowReportList);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(449, 338);
@@ -364,30 +391,31 @@
             this.tabPage3.Text = "上一次查重结果";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // btnExportReport
             // 
-            this.button6.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button6.Location = new System.Drawing.Point(121, 43);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(209, 107);
-            this.button6.TabIndex = 1;
-            this.button6.Text = "导出上一次查重报告";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.Button_export_report);
+            this.btnExportReport.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnExportReport.Location = new System.Drawing.Point(121, 43);
+            this.btnExportReport.Name = "btnExportReport";
+            this.btnExportReport.Size = new System.Drawing.Size(209, 107);
+            this.btnExportReport.TabIndex = 1;
+            this.btnExportReport.Text = "导出上一次查重报告";
+            this.btnExportReport.UseVisualStyleBackColor = true;
+            this.btnExportReport.Click += new System.EventHandler(this.ButtonExportReport);
             // 
-            // button5
+            // btnShowReportList
             // 
-            this.button5.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button5.Location = new System.Drawing.Point(121, 181);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(209, 107);
-            this.button5.TabIndex = 2;
-            this.button5.Text = "查看上一次查重报告";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.Button_look_report);
+            this.btnShowReportList.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnShowReportList.Location = new System.Drawing.Point(121, 181);
+            this.btnShowReportList.Name = "btnShowReportList";
+            this.btnShowReportList.Size = new System.Drawing.Size(209, 107);
+            this.btnShowReportList.TabIndex = 2;
+            this.btnShowReportList.Text = "查看上一次查重报告";
+            this.btnShowReportList.UseVisualStyleBackColor = true;
+            this.btnShowReportList.Click += new System.EventHandler(this.ButtonShowReportList);
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.groupBox4);
             this.tabPage4.Controls.Add(this.groupBox3);
             this.tabPage4.Controls.Add(this.groupBox2);
             this.tabPage4.Controls.Add(this.groupBox1);
@@ -398,154 +426,210 @@
             this.tabPage4.Text = "高级设置";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.btnRestoreDefault2);
+            this.groupBox4.Controls.Add(this.label2);
+            this.groupBox4.Controls.Add(this.txtMinBytes);
+            this.groupBox4.Controls.Add(this.txtMinWords);
+            this.groupBox4.Controls.Add(this.label4);
+            this.groupBox4.Location = new System.Drawing.Point(32, 108);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(379, 76);
+            this.groupBox4.TabIndex = 29;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "论文限制";
+            // 
+            // btnRestoreDefault2
+            // 
+            this.btnRestoreDefault2.Location = new System.Drawing.Point(257, 15);
+            this.btnRestoreDefault2.Name = "btnRestoreDefault2";
+            this.btnRestoreDefault2.Size = new System.Drawing.Size(87, 52);
+            this.btnRestoreDefault2.TabIndex = 28;
+            this.btnRestoreDefault2.Text = "恢复默认";
+            this.btnRestoreDefault2.UseVisualStyleBackColor = true;
+            this.btnRestoreDefault2.Click += new System.EventHandler(this.ButtonRestoreDefault2);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(55, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(77, 12);
+            this.label2.TabIndex = 26;
+            this.label2.Text = "论文最低字数";
+            // 
+            // txtMinBytes
+            // 
+            this.txtMinBytes.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtMinBytes.Location = new System.Drawing.Point(138, 44);
+            this.txtMinBytes.MaxLength = 5;
+            this.txtMinBytes.Name = "txtMinBytes";
+            this.txtMinBytes.Size = new System.Drawing.Size(100, 23);
+            this.txtMinBytes.TabIndex = 25;
+            this.txtMinBytes.Text = "1";
+            this.txtMinBytes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DigitFilterKeyPress);
+            // 
+            // txtMinWords
+            // 
+            this.txtMinWords.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtMinWords.Location = new System.Drawing.Point(138, 15);
+            this.txtMinWords.MaxLength = 5;
+            this.txtMinWords.Name = "txtMinWords";
+            this.txtMinWords.Size = new System.Drawing.Size(100, 23);
+            this.txtMinWords.TabIndex = 24;
+            this.txtMinWords.Text = "1";
+            this.txtMinWords.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DigitFilterKeyPress);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(21, 47);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(113, 12);
+            this.label4.TabIndex = 27;
+            this.label4.Text = "转换后文件最小字节";
+            // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.button10);
-            this.groupBox3.Location = new System.Drawing.Point(32, 254);
+            this.groupBox3.Controls.Add(this.btnReset);
+            this.groupBox3.Location = new System.Drawing.Point(32, 266);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(379, 60);
+            this.groupBox3.Size = new System.Drawing.Size(379, 57);
             this.groupBox3.TabIndex = 34;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "其它设置";
             // 
-            // button10
+            // btnReset
             // 
-            this.button10.Location = new System.Drawing.Point(138, 20);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(100, 29);
-            this.button10.TabIndex = 29;
-            this.button10.Text = "重置系统";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.Button_reset_system);
+            this.btnReset.Location = new System.Drawing.Point(138, 17);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(100, 29);
+            this.btnReset.TabIndex = 29;
+            this.btnReset.Text = "重置系统";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.ButtonReset);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.checkBox5);
-            this.groupBox2.Controls.Add(this.checkBox4);
-            this.groupBox2.Controls.Add(this.checkBox2);
-            this.groupBox2.Controls.Add(this.checkBox3);
-            this.groupBox2.Location = new System.Drawing.Point(32, 148);
+            this.groupBox2.Controls.Add(this.chkSuportTxt);
+            this.groupBox2.Controls.Add(this.chkSuportDocx);
+            this.groupBox2.Controls.Add(this.chkSuportPdf);
+            this.groupBox2.Controls.Add(this.chkSuportDoc);
+            this.groupBox2.Location = new System.Drawing.Point(32, 199);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(379, 85);
+            this.groupBox2.Size = new System.Drawing.Size(379, 51);
             this.groupBox2.TabIndex = 29;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "支持的论文格式";
             // 
-            // label10
+            // chkSuportTxt
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(47, 54);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(197, 12);
-            this.label10.TabIndex = 30;
-            this.label10.Text = "注：未勾选的格式在查重时将被忽略";
+            this.chkSuportTxt.AutoSize = true;
+            this.chkSuportTxt.Checked = true;
+            this.chkSuportTxt.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkSuportTxt.Location = new System.Drawing.Point(130, 24);
+            this.chkSuportTxt.Name = "chkSuportTxt";
+            this.chkSuportTxt.Size = new System.Drawing.Size(42, 16);
+            this.chkSuportTxt.TabIndex = 33;
+            this.chkSuportTxt.Text = "TXT";
+            this.chkSuportTxt.UseVisualStyleBackColor = true;
             // 
-            // checkBox5
+            // chkSuportDocx
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Checked = true;
-            this.checkBox5.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox5.Location = new System.Drawing.Point(130, 27);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(42, 16);
-            this.checkBox5.TabIndex = 33;
-            this.checkBox5.Text = "TXT";
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.chkSuportDocx.AutoSize = true;
+            this.chkSuportDocx.Checked = true;
+            this.chkSuportDocx.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkSuportDocx.Location = new System.Drawing.Point(290, 24);
+            this.chkSuportDocx.Name = "chkSuportDocx";
+            this.chkSuportDocx.Size = new System.Drawing.Size(48, 16);
+            this.chkSuportDocx.TabIndex = 32;
+            this.chkSuportDocx.Text = "DOCX";
+            this.chkSuportDocx.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // chkSuportPdf
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Checked = true;
-            this.checkBox4.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox4.Location = new System.Drawing.Point(290, 27);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(48, 16);
-            this.checkBox4.TabIndex = 32;
-            this.checkBox4.Text = "DOCX";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.chkSuportPdf.AutoSize = true;
+            this.chkSuportPdf.Checked = true;
+            this.chkSuportPdf.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkSuportPdf.Location = new System.Drawing.Point(49, 24);
+            this.chkSuportPdf.Name = "chkSuportPdf";
+            this.chkSuportPdf.Size = new System.Drawing.Size(42, 16);
+            this.chkSuportPdf.TabIndex = 30;
+            this.chkSuportPdf.Text = "PDF";
+            this.chkSuportPdf.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // chkSuportDoc
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Checked = true;
-            this.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox2.Location = new System.Drawing.Point(49, 27);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(42, 16);
-            this.checkBox2.TabIndex = 30;
-            this.checkBox2.Text = "PDF";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Checked = true;
-            this.checkBox3.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox3.Location = new System.Drawing.Point(209, 27);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(42, 16);
-            this.checkBox3.TabIndex = 31;
-            this.checkBox3.Text = "DOC";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.chkSuportDoc.AutoSize = true;
+            this.chkSuportDoc.Checked = true;
+            this.chkSuportDoc.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkSuportDoc.Location = new System.Drawing.Point(209, 24);
+            this.chkSuportDoc.Name = "chkSuportDoc";
+            this.chkSuportDoc.Size = new System.Drawing.Size(42, 16);
+            this.chkSuportDoc.TabIndex = 31;
+            this.chkSuportDoc.Text = "DOC";
+            this.chkSuportDoc.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button9);
+            this.groupBox1.Controls.Add(this.btnRestoreDefault1);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.textBox9);
-            this.groupBox1.Controls.Add(this.textBox8);
+            this.groupBox1.Controls.Add(this.txtConvertThreadCnt);
+            this.groupBox1.Controls.Add(this.txtCheckThreadCnt);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(32, 20);
+            this.groupBox1.Location = new System.Drawing.Point(32, 17);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(379, 110);
+            this.groupBox1.Size = new System.Drawing.Size(379, 76);
             this.groupBox1.TabIndex = 28;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "线程数设置";
             // 
-            // button9
+            // btnRestoreDefault1
             // 
-            this.button9.Location = new System.Drawing.Point(257, 28);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(87, 56);
-            this.button9.TabIndex = 28;
-            this.button9.Text = "恢复默认";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.Button9_Click);
+            this.btnRestoreDefault1.Location = new System.Drawing.Point(257, 15);
+            this.btnRestoreDefault1.Name = "btnRestoreDefault1";
+            this.btnRestoreDefault1.Size = new System.Drawing.Size(87, 52);
+            this.btnRestoreDefault1.TabIndex = 28;
+            this.btnRestoreDefault1.Text = "恢复默认";
+            this.btnRestoreDefault1.UseVisualStyleBackColor = true;
+            this.btnRestoreDefault1.Click += new System.EventHandler(this.ButtonRestoreDefault1);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(67, 33);
+            this.label7.Location = new System.Drawing.Point(67, 20);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(65, 12);
             this.label7.TabIndex = 26;
-            this.label7.Text = "查重进程数";
+            this.label7.Text = "查重线程数";
             // 
-            // textBox9
+            // txtConvertThreadCnt
             // 
-            this.textBox9.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox9.Location = new System.Drawing.Point(138, 63);
-            this.textBox9.MaxLength = 2;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 23);
-            this.textBox9.TabIndex = 25;
-            this.textBox9.Text = "2";
+            this.txtConvertThreadCnt.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtConvertThreadCnt.Location = new System.Drawing.Point(138, 44);
+            this.txtConvertThreadCnt.MaxLength = 2;
+            this.txtConvertThreadCnt.Name = "txtConvertThreadCnt";
+            this.txtConvertThreadCnt.Size = new System.Drawing.Size(100, 23);
+            this.txtConvertThreadCnt.TabIndex = 25;
+            this.txtConvertThreadCnt.Text = "2";
+            this.txtConvertThreadCnt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DigitFilterKeyPress);
             // 
-            // textBox8
+            // txtCheckThreadCnt
             // 
-            this.textBox8.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox8.Location = new System.Drawing.Point(138, 28);
-            this.textBox8.MaxLength = 2;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 23);
-            this.textBox8.TabIndex = 24;
-            this.textBox8.Text = "3";
+            this.txtCheckThreadCnt.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtCheckThreadCnt.Location = new System.Drawing.Point(138, 15);
+            this.txtCheckThreadCnt.MaxLength = 2;
+            this.txtCheckThreadCnt.Name = "txtCheckThreadCnt";
+            this.txtCheckThreadCnt.Size = new System.Drawing.Size(100, 23);
+            this.txtCheckThreadCnt.TabIndex = 24;
+            this.txtCheckThreadCnt.Text = "3";
+            this.txtCheckThreadCnt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DigitFilterKeyPress);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(43, 66);
+            this.label1.Location = new System.Drawing.Point(43, 47);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(89, 12);
             this.label1.TabIndex = 27;
@@ -565,7 +649,7 @@
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.label16);
-            this.groupBox6.Controls.Add(this.button12);
+            this.groupBox6.Controls.Add(this.btnShowLicence);
             this.groupBox6.Controls.Add(this.label23);
             this.groupBox6.Location = new System.Drawing.Point(32, 20);
             this.groupBox6.Name = "groupBox6";
@@ -581,17 +665,17 @@
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(47, 12);
             this.label16.TabIndex = 27;
-            this.label16.Text = "0.8.2.0";
+            this.label16.Text = "0.9.0.0";
             // 
-            // button12
+            // btnShowLicence
             // 
-            this.button12.Location = new System.Drawing.Point(231, 18);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(75, 23);
-            this.button12.TabIndex = 1;
-            this.button12.Text = "开源协议";
-            this.button12.UseVisualStyleBackColor = true;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
+            this.btnShowLicence.Location = new System.Drawing.Point(231, 18);
+            this.btnShowLicence.Name = "btnShowLicence";
+            this.btnShowLicence.Size = new System.Drawing.Size(75, 23);
+            this.btnShowLicence.TabIndex = 1;
+            this.btnShowLicence.Text = "开源协议";
+            this.btnShowLicence.UseVisualStyleBackColor = true;
+            this.btnShowLicence.Click += new System.EventHandler(this.ButtonShowLicence);
             // 
             // label23
             // 
@@ -626,7 +710,7 @@
             this.textBox4.TabIndex = 0;
             this.textBox4.Text = resources.GetString("textBox4.Text");
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -634,10 +718,10 @@
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "简体中文论文查重系统";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainFormFormClosing);
+            this.Load += new System.EventHandler(this.MainFormLoad);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -645,6 +729,8 @@
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -663,51 +749,58 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnAddLibrary;
+        private System.Windows.Forms.Button btnStartChecking;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtCheckThreshold;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnShowReportList;
+        private System.Windows.Forms.Button btnExportReport;
+        private System.Windows.Forms.CheckBox chkRecover;
+        private System.Windows.Forms.Button btnFinalReportPath;
+        private System.Windows.Forms.TextBox txtFinalReportPath;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbCheckWay;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox txtConvertThreadCnt;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtCheckThreadCnt;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button btnRestoreDefault1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.CheckBox chkSuportTxt;
+        private System.Windows.Forms.CheckBox chkSuportDocx;
+        private System.Windows.Forms.CheckBox chkSuportPdf;
+        private System.Windows.Forms.CheckBox chkSuportDoc;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button btnForceStop;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.CheckBox checkBox7;
+        private System.Windows.Forms.CheckBox chkStatisTable;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button btnShowLicence;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Button btnToCheckPaperPath;
+        private System.Windows.Forms.TextBox txtToCheckPaperPath;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Button btnPaperSourcePath;
+        private System.Windows.Forms.TextBox txtPaperSourcePath;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button btnRestoreDefault2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtMinBytes;
+        private System.Windows.Forms.TextBox txtMinWords;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        public System.Windows.Forms.ProgressBar pbCheckingProgress;
     }
 }
 
