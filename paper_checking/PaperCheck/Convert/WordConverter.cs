@@ -32,7 +32,6 @@ namespace paper_checking.PaperCheck.Convert
             }
             catch (Exception e)
             {
-                string a = e.StackTrace;
             }
             finally
             {

@@ -160,7 +160,7 @@ namespace paper_checking.PaperCheck
          */
         private void RealCheckShell(object thread_payload)
         {
-            //获取单数
+            //获取参数
             string[] part_param = (string[])thread_payload;
             int res = real_check(part_param[0], part_param[1], part_param[2], part_param[3], part_param[4], part_param[5], part_param[6], part_param[7]);
             //如果动态链接库异常返回值

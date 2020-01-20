@@ -154,7 +154,7 @@ namespace paper_checking.PaperCheck
         /*
          * 重置
          */
-        static public void ResetProgram(RunningEnv runningEnv)
+        static public void ResetProgram()
         {
             //确认提示
             DialogResult dr = MessageBox.Show("重置后系统将关闭，是否继续重置？", "提示", MessageBoxButtons.OKCancel);

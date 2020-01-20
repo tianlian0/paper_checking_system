@@ -304,7 +304,7 @@ namespace paper_checking
          */
         private void ButtonReset(object sender, EventArgs e)
         {
-            Utils.DeleteOldFile();
+            Utils.ResetProgram();
         }
 
         /*
