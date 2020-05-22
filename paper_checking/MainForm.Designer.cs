@@ -182,7 +182,7 @@
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(135, 12);
             this.label20.TabIndex = 34;
-            this.label20.Text = "待查论文所在的文件夹";
+            this.label20.Text = "待查文件所在的文件夹";
             // 
             // chkStatisTable
             // 
@@ -323,7 +323,7 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(449, 338);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "论文库管理";
+            this.tabPage2.Text = "比对库管理";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // textBox10
@@ -367,7 +367,7 @@
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(148, 12);
             this.label21.TabIndex = 37;
-            this.label21.Text = "待添加论文所在的文件夹";
+            this.label21.Text = "待添加文件所在的文件夹";
             // 
             // btnAddLibrary
             // 
@@ -376,7 +376,7 @@
             this.btnAddLibrary.Name = "btnAddLibrary";
             this.btnAddLibrary.Size = new System.Drawing.Size(135, 53);
             this.btnAddLibrary.TabIndex = 0;
-            this.btnAddLibrary.Text = "添加到论文库";
+            this.btnAddLibrary.Text = "添加到比对库";
             this.btnAddLibrary.UseVisualStyleBackColor = true;
             this.btnAddLibrary.Click += new System.EventHandler(this.ButtonAddLibrary);
             // 
@@ -438,7 +438,7 @@
             this.groupBox4.Size = new System.Drawing.Size(379, 76);
             this.groupBox4.TabIndex = 29;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "论文限制";
+            this.groupBox4.Text = "文件限制";
             // 
             // btnRestoreDefault2
             // 
@@ -457,7 +457,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 12);
             this.label2.TabIndex = 26;
-            this.label2.Text = "论文最低字数";
+            this.label2.Text = "文件最低字数";
             // 
             // txtMinBytes
             // 
@@ -521,7 +521,7 @@
             this.groupBox2.Size = new System.Drawing.Size(379, 51);
             this.groupBox2.TabIndex = 29;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "支持的论文格式";
+            this.groupBox2.Text = "支持的文件格式";
             // 
             // chkSuportTxt
             // 
@@ -719,7 +719,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "MainForm";
-            this.Text = "简体中文论文查重系统";
+            this.Text = "简体中文查重系统";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainFormFormClosing);
             this.Load += new System.EventHandler(this.MainFormLoad);
             this.tabControl1.ResumeLayout(false);

@@ -168,7 +168,7 @@ namespace paper_checking.PaperCheck
             {
                 runningEnv.UIContext.BeginInvoke(new Action(() =>
                 {
-                    MessageBox.Show(runningEnv.UIContext, "查重任务出现未知的错误，请检查！", "错误");
+                    MessageBox.Show(runningEnv.UIContext, "查重任务出现未知的错误。建议排查：1、比对库中文件的文件名名是否包含特殊字符；2、操作系统寻址位是否可paper_check.dll一致。", "错误");
                 }));
             }
         }
@@ -357,7 +357,7 @@ namespace paper_checking.PaperCheck
             {
                 runningEnv.UIContext.BeginInvoke(new Action(() =>
                 {
-                    MessageBox.Show(runningEnv.UIContext, "以下论文的报告导出失败，请检查：" + error_msg.ToString(), "提示");
+                    MessageBox.Show(runningEnv.UIContext, "以下文件的报告导出失败，请检查：" + error_msg.ToString(), "提示");
                 }));
             }
         }

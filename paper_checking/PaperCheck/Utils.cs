@@ -223,7 +223,7 @@ namespace paper_checking.PaperCheck
 
         static public void AdsMessage()
         {
-            MessageBox.Show("本项目可以提供c#版本的相关技术支持，也可定制java版sdk开发包及技术支持，商业合作请联系微信/QQ：654062779。\r\n本提示您可自行修改源代码去除", "提示");
+            MessageBox.Show("本系统是将文件和本地比对库中的文件进行比对查重，因此不添加比对库将导致纵向查重结果为0，请知悉。本项目可以提供c#版、java版相关技术支持和系统定制开发，商业合作请联系微信/QQ：654062779。\r\n本提示您可自行修改源代码去除", "提示");
         }
 
     }
