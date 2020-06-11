@@ -11,7 +11,7 @@ namespace paper_checking.PaperCheck.Convert
 {
     class PdfConverter : ConvertCore
     {
-        public override string ConvertToString(string path)
+        public override string ConvertToString(string path, string blockText)
         {
             PDDocument pdffile = null;
             string text = null;
@@ -22,7 +22,7 @@ namespace paper_checking.PaperCheck.Convert
                 text = pdfStripper.getText(pdffile);
                 text = Regex.Replace(text, @"[^\u4e00-\u9fa5\《\》\（\）\——\；\，\。\“\”\！]", "");
                 text = Regex.Replace(text, @"\s", string.Empty);
-                text = TextFormat(text);
+                text = TextFormat(text, blockText);
             }
             finally
             {

@@ -75,10 +75,18 @@ namespace paper_checking.PaperCheck
             try
             {
                 fs = new FileStream("config.ini", FileMode.Create, FileAccess.Write);
-                sw = new StreamWriter(fs);
+                sw = new StreamWriter(fs, Encoding.GetEncoding("GBK"));
+
                 sw.WriteLine(runningEnv.CheckData.CheckThreshold);
                 sw.WriteLine(runningEnv.SettingData.CheckThreadCnt);
                 sw.WriteLine(runningEnv.SettingData.ConvertThreadCnt);
+
+                sw.WriteLine(runningEnv.CheckData.ToCheckPaperPath);
+                sw.WriteLine(runningEnv.CheckData.FinalReportPath);
+                sw.WriteLine(runningEnv.LibraryData.PaperSourcePath);
+
+                sw.WriteLine(runningEnv.CheckData.Blocklist);
+
                 if (runningEnv.SettingData.SuportPdf)
                     sw.WriteLine("1");
                 else
@@ -124,9 +132,17 @@ namespace paper_checking.PaperCheck
                 try
                 {
                     sr = new StreamReader("config.ini", Encoding.GetEncoding("GBK"));
+
                     runningEnv.CheckData.CheckThreshold = int.Parse(sr.ReadLine());
                     runningEnv.SettingData.CheckThreadCnt = int.Parse(sr.ReadLine());
                     runningEnv.SettingData.ConvertThreadCnt = int.Parse(sr.ReadLine());
+
+                    runningEnv.CheckData.ToCheckPaperPath = sr.ReadLine();
+                    runningEnv.CheckData.FinalReportPath = sr.ReadLine();
+                    runningEnv.LibraryData.PaperSourcePath = sr.ReadLine();
+
+                    runningEnv.CheckData.Blocklist = sr.ReadLine();
+
                     string line = sr.ReadLine();
                     if (line == "0")
                         runningEnv.SettingData.SuportPdf = false;

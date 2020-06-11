@@ -49,11 +49,14 @@
             this.txtCheckThreshold = new System.Windows.Forms.TextBox();
             this.btnStartChecking = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.btnPaperSourcePath = new System.Windows.Forms.Button();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtBlocklist = new System.Windows.Forms.TextBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.txtPaperSourcePath = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
+            this.btnPaperSourcePath = new System.Windows.Forms.Button();
             this.btnAddLibrary = new System.Windows.Forms.Button();
+            this.label21 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.btnExportReport = new System.Windows.Forms.Button();
             this.btnShowReportList = new System.Windows.Forms.Button();
@@ -87,6 +90,8 @@
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -313,11 +318,8 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.textBox10);
-            this.tabPage2.Controls.Add(this.btnPaperSourcePath);
-            this.tabPage2.Controls.Add(this.txtPaperSourcePath);
-            this.tabPage2.Controls.Add(this.label21);
-            this.tabPage2.Controls.Add(this.btnAddLibrary);
+            this.tabPage2.Controls.Add(this.groupBox8);
+            this.tabPage2.Controls.Add(this.groupBox7);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -326,24 +328,61 @@
             this.tabPage2.Text = "比对库管理";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // textBox10
+            // groupBox8
             // 
-            this.textBox10.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox10.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox10.Location = new System.Drawing.Point(6, 6);
-            this.textBox10.Multiline = true;
-            this.textBox10.Name = "textBox10";
-            this.textBox10.ReadOnly = true;
-            this.textBox10.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox10.Size = new System.Drawing.Size(437, 195);
-            this.textBox10.TabIndex = 39;
-            this.textBox10.Text = resources.GetString("textBox10.Text");
+            this.groupBox8.Controls.Add(this.label8);
+            this.groupBox8.Controls.Add(this.txtBlocklist);
+            this.groupBox8.Location = new System.Drawing.Point(6, 174);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(437, 147);
+            this.groupBox8.TabIndex = 40;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "自定义关键词过滤";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(264, 125);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(161, 12);
+            this.label8.TabIndex = 39;
+            this.label8.Text = "注：关键词之间通过空格分隔";
+            // 
+            // txtBlocklist
+            // 
+            this.txtBlocklist.Location = new System.Drawing.Point(11, 23);
+            this.txtBlocklist.Multiline = true;
+            this.txtBlocklist.Name = "txtBlocklist";
+            this.txtBlocklist.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtBlocklist.Size = new System.Drawing.Size(414, 97);
+            this.txtBlocklist.TabIndex = 0;
+            this.txtBlocklist.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBlocklist_KeyPress);
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.txtPaperSourcePath);
+            this.groupBox7.Controls.Add(this.btnPaperSourcePath);
+            this.groupBox7.Controls.Add(this.btnAddLibrary);
+            this.groupBox7.Controls.Add(this.label21);
+            this.groupBox7.Location = new System.Drawing.Point(6, 11);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(437, 144);
+            this.groupBox7.TabIndex = 39;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "添加比对库";
+            // 
+            // txtPaperSourcePath
+            // 
+            this.txtPaperSourcePath.Location = new System.Drawing.Point(218, 32);
+            this.txtPaperSourcePath.Name = "txtPaperSourcePath";
+            this.txtPaperSourcePath.ReadOnly = true;
+            this.txtPaperSourcePath.Size = new System.Drawing.Size(100, 21);
+            this.txtPaperSourcePath.TabIndex = 38;
             // 
             // btnPaperSourcePath
             // 
             this.btnPaperSourcePath.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnPaperSourcePath.Location = new System.Drawing.Point(325, 222);
+            this.btnPaperSourcePath.Location = new System.Drawing.Point(324, 30);
             this.btnPaperSourcePath.Name = "btnPaperSourcePath";
             this.btnPaperSourcePath.Size = new System.Drawing.Size(42, 25);
             this.btnPaperSourcePath.TabIndex = 36;
@@ -351,34 +390,26 @@
             this.btnPaperSourcePath.UseVisualStyleBackColor = true;
             this.btnPaperSourcePath.Click += new System.EventHandler(this.ButtonSelectPaperSourcePath);
             // 
-            // txtPaperSourcePath
-            // 
-            this.txtPaperSourcePath.Location = new System.Drawing.Point(219, 224);
-            this.txtPaperSourcePath.Name = "txtPaperSourcePath";
-            this.txtPaperSourcePath.ReadOnly = true;
-            this.txtPaperSourcePath.Size = new System.Drawing.Size(100, 21);
-            this.txtPaperSourcePath.TabIndex = 38;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label21.Location = new System.Drawing.Point(65, 228);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(148, 12);
-            this.label21.TabIndex = 37;
-            this.label21.Text = "待添加文件所在的文件夹";
-            // 
             // btnAddLibrary
             // 
             this.btnAddLibrary.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnAddLibrary.Location = new System.Drawing.Point(157, 260);
+            this.btnAddLibrary.Location = new System.Drawing.Point(156, 68);
             this.btnAddLibrary.Name = "btnAddLibrary";
             this.btnAddLibrary.Size = new System.Drawing.Size(135, 53);
             this.btnAddLibrary.TabIndex = 0;
             this.btnAddLibrary.Text = "添加到比对库";
             this.btnAddLibrary.UseVisualStyleBackColor = true;
             this.btnAddLibrary.Click += new System.EventHandler(this.ButtonAddLibrary);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label21.Location = new System.Drawing.Point(64, 36);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(148, 12);
+            this.label21.TabIndex = 37;
+            this.label21.Text = "待添加文件所在的文件夹";
             // 
             // tabPage3
             // 
@@ -388,7 +419,7 @@
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(449, 338);
             this.tabPage3.TabIndex = 3;
-            this.tabPage3.Text = "上一次查重结果";
+            this.tabPage3.Text = "历史查重结果";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // btnExportReport
@@ -665,7 +696,7 @@
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(47, 12);
             this.label16.TabIndex = 27;
-            this.label16.Text = "0.9.0.0";
+            this.label16.Text = "0.9.0.4";
             // 
             // btnShowLicence
             // 
@@ -726,7 +757,10 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
@@ -792,7 +826,6 @@
         private System.Windows.Forms.Button btnPaperSourcePath;
         private System.Windows.Forms.TextBox txtPaperSourcePath;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button btnRestoreDefault2;
         private System.Windows.Forms.Label label2;
@@ -801,6 +834,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.ProgressBar pbCheckingProgress;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtBlocklist;
+        private System.Windows.Forms.GroupBox groupBox7;
     }
 }
 

@@ -32,6 +32,7 @@ namespace paper_checking
             runningEnv.CheckData.StatisTable = chkStatisTable.Checked;
             runningEnv.CheckData.ToCheckPaperPath = txtToCheckPaperPath.Text;
             runningEnv.CheckData.FinalReportPath = txtFinalReportPath.Text;
+            runningEnv.CheckData.Blocklist = txtBlocklist.Text;
 
             runningEnv.LibraryData.PaperSourcePath = txtPaperSourcePath.Text;
 
@@ -58,6 +59,7 @@ namespace paper_checking
             chkStatisTable.Checked = runningEnv.CheckData.StatisTable;
             txtToCheckPaperPath.Text = runningEnv.CheckData.ToCheckPaperPath;
             txtFinalReportPath.Text = runningEnv.CheckData.FinalReportPath;
+            txtBlocklist.Text = runningEnv.CheckData.Blocklist;
 
             txtPaperSourcePath.Text = runningEnv.LibraryData.PaperSourcePath;
 
@@ -388,6 +390,11 @@ namespace paper_checking
             txtMinBytes.Text = "1";
         }
 
+        private void txtBlocklist_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13 || e.KeyChar == 10 || e.KeyChar == 64)
+                e.Handled = true;
+        }
     }
    
 }

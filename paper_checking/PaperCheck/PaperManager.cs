@@ -73,14 +73,17 @@ namespace paper_checking.PaperCheck
                     if (file_converter != null)//如果可以获得到转换器
                     {
                         //获取文本
-                        text = file_converter.ConvertToString(path);
-                        if (text.Length > RunningEnv.ProgramParam.MaxWords)
+                        text = file_converter.ConvertToString(path, runningEnv.CheckData.Blocklist);
+                        if (text != null && text.Length > 0)
                         {
-                            //舍弃过长的部分
-                            text = text.Substring(0, RunningEnv.ProgramParam.MaxWords);
+                            if (text.Length > RunningEnv.ProgramParam.MaxWords)
+                            {
+                                //舍弃过长的部分
+                                text = text.Substring(0, RunningEnv.ProgramParam.MaxWords);
+                            }
+                            //写入目标路径
+                            File.WriteAllText(dist_path, text, Encoding.GetEncoding("GBK"));
                         }
-                        //写入目标路径
-                        File.WriteAllText(dist_path, text, Encoding.GetEncoding("GBK"));
                     }
                     else
                     {
@@ -168,7 +171,7 @@ namespace paper_checking.PaperCheck
             {
                 runningEnv.UIContext.BeginInvoke(new Action(() =>
                 {
-                    MessageBox.Show(runningEnv.UIContext, "查重任务出现未知的错误。建议排查：1、比对库中文件的文件名名是否包含特殊字符；2、操作系统寻址位是否可paper_check.dll一致。", "错误");
+                    MessageBox.Show(runningEnv.UIContext, "查重任务出现未知的错误。建议排查：1、比对库中文件的文件名是否包含特殊字符；2、操作系统寻址位是否可paper_check.dll一致。", "错误");
                 }));
             }
         }

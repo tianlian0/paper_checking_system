@@ -34,6 +34,7 @@ namespace paper_checking
             public string FinalReportPath { set; get; }
             public int MinBytes { set; get; }
             public int MinWords { set; get; }
+            public string Blocklist { set; get; }
             public CheckParam()
             {
                 CheckWay = 0;
@@ -44,6 +45,7 @@ namespace paper_checking
                 FinalReportPath = "";
                 MinBytes = 80;
                 MinWords = 10;
+                Blocklist = "";
             }
         }
 

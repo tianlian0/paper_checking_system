@@ -9,7 +9,7 @@ namespace paper_checking.PaperCheck.Convert
 {
     class WordConverter : ConvertCore
     {
-        public override string ConvertToString(string path)
+        public override string ConvertToString(string path, string blockText)
         {
             Spire.Doc.Document doc = null;
             string text = null;
@@ -28,7 +28,7 @@ namespace paper_checking.PaperCheck.Convert
                 text = text.Replace("#", "").Replace('\r', '#').Replace('\n', '#');
                 text = Regex.Replace(text, @"[^\u4e00-\u9fa5\《\》\（\）\——\；\，\。\“\”\！\#]", "");
                 text = new Regex("[#]+").Replace(text, "@@").Trim();
-                text = TextFormat(text);
+                text = TextFormat(text, blockText);
             }
             catch (Exception e)
             {

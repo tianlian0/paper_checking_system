@@ -11,20 +11,20 @@ namespace paper_checking.PaperCheck.Convert
         /*
          * 获取文件的文本
          */
-        public abstract string ConvertToString(string path);
+        public abstract string ConvertToString(string path, string blockText);
 
         /*
          * 去除参考文献后的部分和目录前的部分
          */
-        public string TextFormat(string text)
+        public string TextFormat(string text, string blockText)
         {
-            if (1.0 * text.IndexOf("参考文献") / text.Length < 0.2)
+            if (text.IndexOf("参考文献") >= 0 && 1.0 * text.IndexOf("参考文献") / text.Length < 0.2)
                 text = text.Substring(text.IndexOf("参考文献") + 4);
             if (text.IndexOf("引言") >= 0 && 1.0 * text.IndexOf("引言") / text.Length < 0.1)
                 text = text.Substring(text.IndexOf("引言") + 2);
             else if (text.IndexOf("绪论") >= 0 && 1.0 * text.IndexOf("绪论") / text.Length < 0.1)
                 text = text.Substring(text.IndexOf("绪论") + 2);
-            else if (1.0 * text.IndexOf("序言") / text.Length < 0.1)
+            else if (text.IndexOf("序言") >= 0 && 1.0 * text.IndexOf("序言") / text.Length < 0.1)
                 text = text.Substring(text.IndexOf("序言") + 2);
 
             int cntckwx = 0;
@@ -32,6 +32,11 @@ namespace paper_checking.PaperCheck.Convert
             {
                 text = text.Substring(0, text.LastIndexOf("参考文献"));
                 cntckwx++;
+            }
+
+            foreach (string keyword in blockText.Split(' '))
+            {
+                text = text.Replace(keyword, "");
             }
 
             text = text.Replace("（）", "").Replace("“”", "").Replace("，，", "，");
