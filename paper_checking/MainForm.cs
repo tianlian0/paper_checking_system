@@ -395,6 +395,11 @@ namespace paper_checking
             if (e.KeyChar == 13 || e.KeyChar == 10 || e.KeyChar == 64)
                 e.Handled = true;
         }
+
+        private void btnManageLibrary_Click(object sender, EventArgs e)
+        {
+            Process.Start("explorer.exe", Application.StartupPath + "\\" + RunningEnv.ProgramParam.TxtPaperSourcePath);
+        }
     }
    
 }

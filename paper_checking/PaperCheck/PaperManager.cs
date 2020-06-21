@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -53,7 +54,10 @@ namespace paper_checking.PaperCheck
                 FileInfo NextFile = fileInfo[FileInfoNo];
 
                 string path = sourceFolder.FullName + "\\" + NextFile.Name;
-                string dist_path = textFolder.FullName + "\\" + NextFile.Name + ".txt";
+                string real_dis_file_name = Regex.Replace(NextFile.Name, @"[^\u4e00-\u9fa5\u0022\《\》\（\）\—\；\，\。\“\”\！\#\\_\-\.\,\:\(\)\'\[\]\【\】\+\·\：\<\>\w]", string.Empty);
+                foreach (char rInvalidChar in Path.GetInvalidFileNameChars())
+                    real_dis_file_name = real_dis_file_name.Replace(rInvalidChar.ToString(), string.Empty);
+                string dist_path = textFolder.FullName + "\\" + real_dis_file_name + ".txt";
 
                 //文件已经被转换则忽略该文件
                 if (File.Exists(dist_path))

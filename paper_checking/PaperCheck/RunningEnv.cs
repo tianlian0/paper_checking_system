@@ -18,10 +18,10 @@ namespace paper_checking
         {
             public static readonly string SecurityKey = "Ubzrfax@3&Yl1rf&cw7ZE4zXsm8ZdIAtyJZ71L48f3yW*TXzylZq7Hqb1moG*xeQQnkFdkqYYXFfyPAS$CeETMw#1qDAPJehBM8";
             public static readonly int MaxWords = 99998;
-            public static readonly string TxtPaperSourcePath = "txtPaperSource/";
-            public static readonly string ToCheckTxtPaperPath = "toCheckTxtPaper/";
-            public static readonly string ReportPath = "report/";
-            public static readonly string ReportDataPath = "reportData/";
+            public static readonly string TxtPaperSourcePath = "txtPaperSource\\";
+            public static readonly string ToCheckTxtPaperPath = "toCheckTxtPaper\\";
+            public static readonly string ReportPath = "report\\";
+            public static readonly string ReportDataPath = "reportData\\";
         }
 
         public class CheckParam

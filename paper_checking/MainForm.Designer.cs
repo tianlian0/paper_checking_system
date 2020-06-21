@@ -87,6 +87,7 @@
             this.label23 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.btnManageLibrary = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -360,6 +361,7 @@
             // 
             // groupBox7
             // 
+            this.groupBox7.Controls.Add(this.btnManageLibrary);
             this.groupBox7.Controls.Add(this.txtPaperSourcePath);
             this.groupBox7.Controls.Add(this.btnPaperSourcePath);
             this.groupBox7.Controls.Add(this.btnAddLibrary);
@@ -393,7 +395,7 @@
             // btnAddLibrary
             // 
             this.btnAddLibrary.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnAddLibrary.Location = new System.Drawing.Point(156, 68);
+            this.btnAddLibrary.Location = new System.Drawing.Point(77, 68);
             this.btnAddLibrary.Name = "btnAddLibrary";
             this.btnAddLibrary.Size = new System.Drawing.Size(135, 53);
             this.btnAddLibrary.TabIndex = 0;
@@ -741,6 +743,17 @@
             this.textBox4.TabIndex = 0;
             this.textBox4.Text = resources.GetString("textBox4.Text");
             // 
+            // btnManageLibrary
+            // 
+            this.btnManageLibrary.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnManageLibrary.Location = new System.Drawing.Point(218, 68);
+            this.btnManageLibrary.Name = "btnManageLibrary";
+            this.btnManageLibrary.Size = new System.Drawing.Size(135, 53);
+            this.btnManageLibrary.TabIndex = 39;
+            this.btnManageLibrary.Text = "管理比对库";
+            this.btnManageLibrary.UseVisualStyleBackColor = true;
+            this.btnManageLibrary.Click += new System.EventHandler(this.btnManageLibrary_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -838,6 +851,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtBlocklist;
         private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Button btnManageLibrary;
     }
 }
 

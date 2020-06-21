@@ -33,13 +33,16 @@ namespace paper_checking.PaperCheck.Convert
                 text = text.Substring(0, text.LastIndexOf("参考文献"));
                 cntckwx++;
             }
-
-            foreach (string keyword in blockText.Split(' '))
+            if (blockText != null && !blockText.Trim().Equals(string.Empty))
             {
-                text = text.Replace(keyword, "");
+                foreach (string keyword in blockText.Split(' '))
+                {
+                    if(keyword.Length > 0){
+                        text = text.Replace(keyword, string.Empty);
+                    }
+                }
             }
-
-            text = text.Replace("（）", "").Replace("“”", "").Replace("，，", "，");
+            text = text.Replace("（）", string.Empty).Replace("“”", string.Empty).Replace("，，", "，");
             text = text.Trim("@".ToCharArray());
             return text;
         }

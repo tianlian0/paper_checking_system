@@ -21,7 +21,7 @@ namespace paper_checking.PaperCheck.Convert
         {
             //判断支持该格式
             if ("doc".Equals(type) && !runningEnv.SettingData.SuportDoc ||
-                "docs".Equals(type) && !runningEnv.SettingData.SuportDocx ||
+                "docx".Equals(type) && !runningEnv.SettingData.SuportDocx ||
                 "pdf".Equals(type) && !runningEnv.SettingData.SuportPdf ||
                 "txt".Equals(type) && !runningEnv.SettingData.SuportTxt)
             {
