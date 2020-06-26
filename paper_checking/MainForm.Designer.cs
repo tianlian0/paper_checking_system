@@ -53,6 +53,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtBlocklist = new System.Windows.Forms.TextBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.btnManageLibrary = new System.Windows.Forms.Button();
             this.txtPaperSourcePath = new System.Windows.Forms.TextBox();
             this.btnPaperSourcePath = new System.Windows.Forms.Button();
             this.btnAddLibrary = new System.Windows.Forms.Button();
@@ -87,7 +88,6 @@
             this.label23 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.btnManageLibrary = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -372,6 +372,17 @@
             this.groupBox7.TabIndex = 39;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "添加比对库";
+            // 
+            // btnManageLibrary
+            // 
+            this.btnManageLibrary.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnManageLibrary.Location = new System.Drawing.Point(218, 68);
+            this.btnManageLibrary.Name = "btnManageLibrary";
+            this.btnManageLibrary.Size = new System.Drawing.Size(135, 53);
+            this.btnManageLibrary.TabIndex = 39;
+            this.btnManageLibrary.Text = "管理比对库";
+            this.btnManageLibrary.UseVisualStyleBackColor = true;
+            this.btnManageLibrary.Click += new System.EventHandler(this.btnManageLibrary_Click);
             // 
             // txtPaperSourcePath
             // 
@@ -698,7 +709,7 @@
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(47, 12);
             this.label16.TabIndex = 27;
-            this.label16.Text = "0.9.0.4";
+            this.label16.Text = "0.9.0.5";
             // 
             // btnShowLicence
             // 
@@ -742,17 +753,6 @@
             this.textBox4.Size = new System.Drawing.Size(367, 208);
             this.textBox4.TabIndex = 0;
             this.textBox4.Text = resources.GetString("textBox4.Text");
-            // 
-            // btnManageLibrary
-            // 
-            this.btnManageLibrary.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnManageLibrary.Location = new System.Drawing.Point(218, 68);
-            this.btnManageLibrary.Name = "btnManageLibrary";
-            this.btnManageLibrary.Size = new System.Drawing.Size(135, 53);
-            this.btnManageLibrary.TabIndex = 39;
-            this.btnManageLibrary.Text = "管理比对库";
-            this.btnManageLibrary.UseVisualStyleBackColor = true;
-            this.btnManageLibrary.Click += new System.EventHandler(this.btnManageLibrary_Click);
             // 
             // MainForm
             // 
