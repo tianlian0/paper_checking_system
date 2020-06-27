@@ -76,33 +76,33 @@ namespace paper_checking
         /*
          * 检查设置项，如果存在不符合条件的则恢复为默认值
          */
-        private void ConfigCheck()
+        private RunningEnv ConfigCheck(RunningEnv runningEnv)
         {
-            RunningEnv runningEnv = GetRunningEnv();
             if (runningEnv.CheckData.CheckThreshold >= 100 || runningEnv.CheckData.CheckThreshold < 1)
             {
-                txtCheckThreshold.Text = "12";
+                runningEnv.CheckData.CheckThreshold = 12;
             }
             if (runningEnv.CheckData.CheckWay != 0 && runningEnv.CheckData.CheckWay != 1)
             {
-                cmbCheckWay.SelectedIndex = 0;
+                runningEnv.CheckData.CheckWay = 0;
             }
             if (runningEnv.CheckData.MinBytes < 0)
             {
-                txtMinBytes.Text = "1";
+                runningEnv.CheckData.MinBytes = 1;
             }
             if(runningEnv.CheckData.MinWords < 0 || runningEnv.CheckData.MinWords > 99998)
             {
-                txtMinWords.Text = "1";
+                runningEnv.CheckData.MinWords = 1;
             }
             if (runningEnv.SettingData.CheckThreadCnt >= 100 || runningEnv.SettingData.CheckThreadCnt < 1)
             {
-                txtCheckThreadCnt.Text = "3";
+                runningEnv.SettingData.CheckThreadCnt = 3;
             }
             if (runningEnv.SettingData.ConvertThreadCnt >= 100 || runningEnv.SettingData.ConvertThreadCnt < 1)
             {
-                txtConvertThreadCnt.Text = "2";
+                runningEnv.SettingData.ConvertThreadCnt = 2;
             }
+            return runningEnv;
         }
 
         /*
@@ -273,8 +273,8 @@ namespace paper_checking
             //如果存在配置文件
             if (File.Exists("config.ini"))
             {
-                //读取并恢复至UI
-                RestoreRunningEnv(Utils.ReadConfig(this));
+                //读取设置项合法性检查并恢复至UI
+                RestoreRunningEnv(ConfigCheck(Utils.ReadConfig(this)));
             }
             else
             {
@@ -282,8 +282,6 @@ namespace paper_checking
                 ButtonRestoreDefault1(sender, e);
                 ButtonRestoreDefault2(sender, e);
             }
-            //设置项合法性检查
-            ConfigCheck();
             //创建初始文件夹
             Utils.FolderCheck();
         }
@@ -398,7 +396,7 @@ namespace paper_checking
 
         private void btnManageLibrary_Click(object sender, EventArgs e)
         {
-            Process.Start("explorer.exe", Application.StartupPath + "\\" + RunningEnv.ProgramParam.TxtPaperSourcePath);
+            Process.Start("explorer.exe", Application.StartupPath + Path.DirectorySeparatorChar + RunningEnv.ProgramParam.TxtPaperSourcePath);
         }
     }
    

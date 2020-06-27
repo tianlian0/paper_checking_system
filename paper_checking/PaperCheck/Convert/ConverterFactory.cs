@@ -19,6 +19,7 @@ namespace paper_checking.PaperCheck.Convert
 
         public ConvertCore GetConverter(string type, RunningEnv runningEnv)
         {
+            type = type.ToLower();
             //判断支持该格式
             if ("doc".Equals(type) && !runningEnv.SettingData.SuportDoc ||
                 "docx".Equals(type) && !runningEnv.SettingData.SuportDocx ||

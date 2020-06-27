@@ -77,9 +77,14 @@ namespace paper_checking.PaperCheck
                 fs = new FileStream("config.ini", FileMode.Create, FileAccess.Write);
                 sw = new StreamWriter(fs, Encoding.GetEncoding("GBK"));
 
+                sw.WriteLine(runningEnv.CheckData.CheckWay);
+
                 sw.WriteLine(runningEnv.CheckData.CheckThreshold);
                 sw.WriteLine(runningEnv.SettingData.CheckThreadCnt);
                 sw.WriteLine(runningEnv.SettingData.ConvertThreadCnt);
+
+                sw.WriteLine(runningEnv.CheckData.MinBytes);
+                sw.WriteLine(runningEnv.CheckData.MinWords);
 
                 sw.WriteLine(runningEnv.CheckData.ToCheckPaperPath);
                 sw.WriteLine(runningEnv.CheckData.FinalReportPath);
@@ -137,9 +142,14 @@ namespace paper_checking.PaperCheck
                 {
                     sr = new StreamReader("config.ini", Encoding.GetEncoding("GBK"));
 
+                    runningEnv.CheckData.CheckWay = int.Parse(sr.ReadLine());
+
                     runningEnv.CheckData.CheckThreshold = int.Parse(sr.ReadLine());
                     runningEnv.SettingData.CheckThreadCnt = int.Parse(sr.ReadLine());
                     runningEnv.SettingData.ConvertThreadCnt = int.Parse(sr.ReadLine());
+
+                    runningEnv.CheckData.MinBytes = int.Parse(sr.ReadLine());
+                    runningEnv.CheckData.MinWords = int.Parse(sr.ReadLine());
 
                     runningEnv.CheckData.ToCheckPaperPath = sr.ReadLine();
                     runningEnv.CheckData.FinalReportPath = sr.ReadLine();

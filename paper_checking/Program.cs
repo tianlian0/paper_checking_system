@@ -15,8 +15,8 @@ namespace paper_checking
 
         static void Main()
         {
-
-            System.Threading.Mutex instance = new System.Threading.Mutex(true, "CachongSingleStart0.9", out bool createdNew);
+            //本项目所用Net Framework版本为4.6，其它版本的兼容性请自行测试
+            System.Threading.Mutex instance = new System.Threading.Mutex(true, "tianlian0//paper_checking_system", out bool createdNew);
             if (createdNew)
             {
                 Application.EnableVisualStyles();

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -18,10 +19,10 @@ namespace paper_checking
         {
             public static readonly string SecurityKey = "Ubzrfax@3&Yl1rf&cw7ZE4zXsm8ZdIAtyJZ71L48f3yW*TXzylZq7Hqb1moG*xeQQnkFdkqYYXFfyPAS$CeETMw#1qDAPJehBM8";
             public static readonly int MaxWords = 99998;
-            public static readonly string TxtPaperSourcePath = "txtPaperSource\\";
-            public static readonly string ToCheckTxtPaperPath = "toCheckTxtPaper\\";
-            public static readonly string ReportPath = "report\\";
-            public static readonly string ReportDataPath = "reportData\\";
+            public static readonly string TxtPaperSourcePath = "txtPaperSource" + Path.DirectorySeparatorChar;
+            public static readonly string ToCheckTxtPaperPath = "toCheckTxtPaper" + Path.DirectorySeparatorChar;
+            public static readonly string ReportPath = "report" + Path.DirectorySeparatorChar;
+            public static readonly string ReportDataPath = "reportData" + Path.DirectorySeparatorChar;
         }
 
         public class CheckParam
@@ -43,8 +44,8 @@ namespace paper_checking
                 StatisTable = true;
                 ToCheckPaperPath = "";
                 FinalReportPath = "";
-                MinBytes = 80;
-                MinWords = 10;
+                MinBytes = 1;
+                MinWords = 1;
                 Blocklist = "";
             }
         }

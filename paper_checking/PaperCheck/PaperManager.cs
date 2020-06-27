@@ -53,11 +53,11 @@ namespace paper_checking.PaperCheck
             {
                 FileInfo NextFile = fileInfo[FileInfoNo];
 
-                string path = sourceFolder.FullName + "\\" + NextFile.Name;
+                string path = sourceFolder.FullName + Path.DirectorySeparatorChar + NextFile.Name;
                 string real_dis_file_name = Regex.Replace(NextFile.Name, @"[^\u4e00-\u9fa5\u0022\《\》\（\）\—\；\，\。\“\”\！\#\\_\-\.\,\:\(\)\'\[\]\【\】\+\·\：\<\>\w]", string.Empty);
                 foreach (char rInvalidChar in Path.GetInvalidFileNameChars())
                     real_dis_file_name = real_dis_file_name.Replace(rInvalidChar.ToString(), string.Empty);
-                string dist_path = textFolder.FullName + "\\" + real_dis_file_name + ".txt";
+                string dist_path = textFolder.FullName + Path.DirectorySeparatorChar + real_dis_file_name + ".txt";
 
                 //文件已经被转换则忽略该文件
                 if (File.Exists(dist_path))
@@ -340,7 +340,7 @@ namespace paper_checking.PaperCheck
                                                                 RunningEnv.ProgramParam.ToCheckTxtPaperPath,
                                                                 RunningEnv.ProgramParam.ReportPath,
                                                                 RunningEnv.ProgramParam.ReportDataPath);
-                    f.richTextBox1.SaveFile(runningEnv.CheckData.FinalReportPath + "\\" + fileInfo[i].Name.Substring(0, fileInfo[i].Name.Length - 4) + ".rtf");
+                    f.richTextBox1.SaveFile(runningEnv.CheckData.FinalReportPath + Path.DirectorySeparatorChar + fileInfo[i].Name.Substring(0, fileInfo[i].Name.Length - 4) + ".rtf");
                     f.Dispose();
                 }
                 catch
@@ -382,7 +382,7 @@ namespace paper_checking.PaperCheck
                 table_report.Append(file.Name.Replace(",", "-") + ", " + sr.ReadLine() + "\r\n");
                 if (sr != null) sr.Close();
             }
-            File.WriteAllText(runningEnv.CheckData.FinalReportPath + "\\重率统计表.csv", table_report.ToString(), Encoding.GetEncoding("GBK"));
+            File.WriteAllText(runningEnv.CheckData.FinalReportPath + Path.DirectorySeparatorChar + "result.csv", table_report.ToString(), Encoding.GetEncoding("GBK"));
         }
 
     }
