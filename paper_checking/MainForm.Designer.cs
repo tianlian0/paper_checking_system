@@ -83,7 +83,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.label16 = new System.Windows.Forms.Label();
+            this.lblVersion = new System.Windows.Forms.Label();
             this.btnShowLicence = new System.Windows.Forms.Button();
             this.label23 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -692,7 +692,7 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.label16);
+            this.groupBox6.Controls.Add(this.lblVersion);
             this.groupBox6.Controls.Add(this.btnShowLicence);
             this.groupBox6.Controls.Add(this.label23);
             this.groupBox6.Location = new System.Drawing.Point(32, 20);
@@ -702,14 +702,14 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "版本更新";
             // 
-            // label16
+            // lblVersion
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(171, 23);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(47, 12);
-            this.label16.TabIndex = 27;
-            this.label16.Text = "0.9.0.5";
+            this.lblVersion.AutoSize = true;
+            this.lblVersion.Location = new System.Drawing.Point(171, 23);
+            this.lblVersion.Name = "lblVersion";
+            this.lblVersion.Size = new System.Drawing.Size(11, 12);
+            this.lblVersion.TabIndex = 27;
+            this.lblVersion.Text = "0";
             // 
             // btnShowLicence
             // 
@@ -830,7 +830,7 @@
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label lblVersion;
         private System.Windows.Forms.Button btnShowLicence;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Button btnToCheckPaperPath;

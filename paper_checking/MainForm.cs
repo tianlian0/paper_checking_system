@@ -269,6 +269,7 @@ namespace paper_checking
          */
         private void MainFormLoad(object sender, EventArgs e)
         {
+            lblVersion.Text = Application.ProductVersion;
             cmbCheckWay.SelectedIndex = 0;
             //如果存在配置文件
             if (File.Exists("config.ini"))
