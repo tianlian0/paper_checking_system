@@ -5,7 +5,7 @@
 
 #### 相关SDK
 目前团队开发了一套新的查重SDK（JAVA版）  
-项目链接：https://dreamspark.com.cn/blog/?id=1  
+项目链接：https://dreamspark.com.cn/blog/?id=16  
 使用示例：https://github.com/tianlian0/duplicate-check-sample  
 SDK相较于本项目更新频率较高也拥有一些更新更高级的特性。目前已有多个商用查重系统和查重网站基于此SDK开发上线。欢迎大家试用、反馈，希望它能帮助大家开发出自己的查重系统。另，C++、C#版在计划开发中。  
 
