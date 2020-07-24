@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace paper_checking
 {
@@ -53,9 +48,13 @@ namespace paper_checking
         public class CheckingParam
         {
             public LinkedList<string> ErrorPaperList { set; get; }
+            public volatile int DllErrCount;
+            public volatile int ThreadErrCount;
             public volatile bool IsFinisth = false;
             public CheckingParam()
             {
+                DllErrCount = 0;
+                ThreadErrCount = 0;
                 ErrorPaperList = new LinkedList<string>();
             }
         }

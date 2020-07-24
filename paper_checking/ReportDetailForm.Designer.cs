@@ -49,7 +49,6 @@
             this.Controls.Add(this.richTextBox1);
             this.Name = "Form2";
             this.Text = "查重标注";
-            this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
 
         }

@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using RTF_Operation;
 
@@ -15,12 +9,11 @@ namespace paper_checking
 {
     public partial class ReportDetailForm : Form
     {
-        string paperName = "";
-        string dp1 = "", dp2 = "", dp3 = "";
+        private readonly string paperName = "";
+        private readonly string dp1 = "";
+        private readonly string dp2 = "";
+        private readonly string dp3 = "";
 
-        string paperPath = "";
-        string rptPath = "";
-        StringBuilder sourceFile2 = new StringBuilder("");
         public ReportDetailForm(string p,string p1,string p2, string p3)
         {
             InitializeComponent();
@@ -28,26 +21,21 @@ namespace paper_checking
             dp1 = p1;
             dp2 = p2;
             dp3 = p3;
-            Form2_Load2();
+            FormLoad();
         }
 
-        private void Form2_Load(object sender, EventArgs e)
+        private void FormLoad()
         {
-
-        }
-
-        private void Form2_Load2()
-        {
-            paperPath = Application.StartupPath + "/" + dp1 + paperName + ".txt";
-            rptPath = Application.StartupPath + "/" + dp3 + paperName + ".txt";
-            string rptDetailPath = Application.StartupPath + "//" + dp2 + paperName + ".txt";
+            string paperPath = Application.StartupPath + Path.DirectorySeparatorChar + dp1 + paperName + ".txt";
+            string rptPath = Application.StartupPath + Path.DirectorySeparatorChar + dp3 + paperName + ".txt";
+            string rptDetailPath = Application.StartupPath + Path.DirectorySeparatorChar + dp2 + paperName + ".txt";
             if ((!File.Exists(paperPath)) || (!File.Exists(rptPath)) || (!File.Exists(rptDetailPath)))
             {
                 Close();
                 throw new Exception();
             }
+            StringBuilder sourceFile2 = new StringBuilder("");
             //sourceFile = File.ReadAllText(paperPath, Encoding.Default)+"\r\n";
-
             StreamReader file2 = new StreamReader(rptDetailPath, Encoding.Default);
             string line2;
             int rnnum = 0;

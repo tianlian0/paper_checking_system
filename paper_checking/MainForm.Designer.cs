@@ -357,7 +357,7 @@
             this.txtBlocklist.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtBlocklist.Size = new System.Drawing.Size(414, 97);
             this.txtBlocklist.TabIndex = 0;
-            this.txtBlocklist.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBlocklist_KeyPress);
+            this.txtBlocklist.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtBlocklist_KeyPress);
             // 
             // groupBox7
             // 
@@ -382,7 +382,7 @@
             this.btnManageLibrary.TabIndex = 39;
             this.btnManageLibrary.Text = "管理比对库";
             this.btnManageLibrary.UseVisualStyleBackColor = true;
-            this.btnManageLibrary.Click += new System.EventHandler(this.btnManageLibrary_Click);
+            this.btnManageLibrary.Click += new System.EventHandler(this.BtnManageLibrary_Click);
             // 
             // txtPaperSourcePath
             // 

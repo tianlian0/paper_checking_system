@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using RTF_Operation;
 
 namespace paper_checking
 {
@@ -26,7 +19,7 @@ namespace paper_checking
             Form3_Load2();
         }
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        private void ListView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (listView1.SelectedItems.Count > 0)
             {
@@ -37,7 +30,7 @@ namespace paper_checking
             }
         }
 
-        private void listView1_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void ListView1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             ListViewHitTestInfo info = listView1.HitTest(e.X, e.Y);
             if (info.Item != null)
@@ -52,7 +45,7 @@ namespace paper_checking
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             int i=0;
             listView1.SelectedItems.Clear();
@@ -66,7 +59,7 @@ namespace paper_checking
             listView1.Focus();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
             if (curPageNum <= sumPageNum)
             {
@@ -94,7 +87,7 @@ namespace paper_checking
         }
 
         FileInfo[] fileInfo;
-        private void button3_Click(object sender, EventArgs e)
+        private void Button3_Click(object sender, EventArgs e)
         {
             if (curPageNum >= sumPageNum)
             {
@@ -126,7 +119,7 @@ namespace paper_checking
             //label3.Text = (curPageNum + 1).ToString();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void Button4_Click(object sender, EventArgs e)
         {
             int i = 0;
             listView1.SelectedItems.Clear();

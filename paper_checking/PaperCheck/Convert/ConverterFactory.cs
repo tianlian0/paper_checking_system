@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace paper_checking.PaperCheck.Convert
+﻿namespace paper_checking.PaperCheck.Convert
 {
     public class ConverterFactory
     {

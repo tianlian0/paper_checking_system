@@ -20,7 +20,7 @@ namespace paper_checking.PaperCheck
         }
 
         //DLL引用
-        [DllImport(@"paper_check.dll", EntryPoint = "real_check", SetLastError = true, CharSet = CharSet.Ansi, ExactSpelling = false, CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(@"paper_check.dll", EntryPoint = "real_check", SetLastError = true, CharSet = CharSet.Ansi, ExactSpelling = false, CallingConvention = CallingConvention.StdCall)]
         extern static int real_check(string s1, string s2, string s3, string s4, string s5, string s6, string s7, string s8);
 
         /*
@@ -33,7 +33,7 @@ namespace paper_checking.PaperCheck
             int taskNo = int.Parse(param[0].ToString());
             DirectoryInfo sourceFolder = new DirectoryInfo(param[1]);
             DirectoryInfo textFolder = new DirectoryInfo(param[2]);
-
+            
             //判断源文件夹和目标文件夹是否存在
             if (!sourceFolder.Exists || !textFolder.Exists)
             {
@@ -171,11 +171,28 @@ namespace paper_checking.PaperCheck
             string[] part_param = (string[])thread_payload;
             int res = real_check(part_param[0], part_param[1], part_param[2], part_param[3], part_param[4], part_param[5], part_param[6], part_param[7]);
             //如果动态链接库异常返回值
-            if (res != 0)
+            string errMsg = "";
+            //记录错误信息
+            switch (res)
             {
+                case 0:
+                    return;
+                case 9:
+                    errMsg = "key文件读取失败。建议排查：1、key文件是否存在；2、是否拥有key文件的读取权限。";
+                    break;
+                default:
+                    errMsg = "出现未知的错误。建议排查：1、比对库中文件的文件名是否包含特殊字符；2、操作系统寻址位是否可paper_check.dll一致；3、查重系统所在文件夹路径是否存在特殊字符。";
+                    break;
+            }
+            //错误计数加1
+            Interlocked.Increment(ref runningEnv.CheckingData.DllErrCount);
+            //判断是否是第一次错误
+            if (!errMsg.Equals("") && runningEnv.CheckingData.DllErrCount == 1)
+            {
+                //显示错误信息
                 runningEnv.UIContext.BeginInvoke(new Action(() =>
                 {
-                    MessageBox.Show(runningEnv.UIContext, "查重任务出现未知的错误。建议排查：1、比对库中文件的文件名是否包含特殊字符；2、操作系统寻址位是否可paper_check.dll一致。", "错误");
+                    MessageBox.Show(runningEnv.UIContext, errMsg, "错误");
                 }));
             }
         }
@@ -275,19 +292,17 @@ namespace paper_checking.PaperCheck
                 }
                 catch (Exception e)
                 {
-                    //如果遇到异常则停止所有线程并报错
-                    foreach (Thread thread in realCheckThreadList)
+                    //如果遇到未知异常，错误计数加1
+                    Interlocked.Increment(ref runningEnv.CheckingData.ThreadErrCount);
+                    //判断是否是第一次错误
+                    if (runningEnv.CheckingData.ThreadErrCount == 1)
                     {
-                        try
+                        //显示错误信息
+                        runningEnv.UIContext.BeginInvoke(new Action(() =>
                         {
-                            thread.Abort();
-                        }
-                        catch { }
+                            MessageBox.Show("未知线程错误，全部或部分文件查重失败。请在查重结束后检查！", "错误");
+                        }));
                     }
-                    runningEnv.UIContext.BeginInvoke(new Action(() =>
-                    {
-                        MessageBox.Show(i.ToString() + "号线程执行失败，任务异常终止。请检查！", "错误");
-                    }));
                 }
             }
 
@@ -296,8 +311,13 @@ namespace paper_checking.PaperCheck
             {
                 thread.Join();
             }
-            //导出查重报告
-            ExportReport();
+
+            //如果有可导出的查重报告，则导出查重报告
+            if (Directory.GetFiles(RunningEnv.ProgramParam.ReportPath).Length > 0 && Directory.GetFiles(RunningEnv.ProgramParam.ReportDataPath).Length > 0)
+            {
+                ExportReport();
+            }
+
             //内存垃圾回收
             GC.Collect();
             //UI更新
@@ -375,11 +395,11 @@ namespace paper_checking.PaperCheck
         public void ExportStatisTable()
         {
             DirectoryInfo data_floder = new DirectoryInfo(RunningEnv.ProgramParam.ReportDataPath);
-            StringBuilder table_report = new StringBuilder("文件名, 重复率（%）\r\n");
+            StringBuilder table_report = new StringBuilder("文件名, 重复率（%）").Append(Environment.NewLine);
             foreach (FileInfo file in data_floder.GetFiles())
             {
                 StreamReader sr = new StreamReader(file.FullName, Encoding.GetEncoding("GBK"));
-                table_report.Append(file.Name.Replace(",", "-") + ", " + sr.ReadLine() + "\r\n");
+                table_report.Append(file.Name.Replace(",", "-")).Append(", ").Append(sr.ReadLine().Replace(",", " ")).Append(Environment.NewLine);
                 if (sr != null) sr.Close();
             }
             File.WriteAllText(runningEnv.CheckData.FinalReportPath + Path.DirectorySeparatorChar + "result.csv", table_report.ToString(), Encoding.GetEncoding("GBK"));

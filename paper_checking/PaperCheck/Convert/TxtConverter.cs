@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace paper_checking.PaperCheck.Convert
 {
@@ -41,9 +38,8 @@ namespace paper_checking.PaperCheck.Convert
             byte[] UTF8 = new byte[] { 0xEF, 0xBB, 0xBF }; //带BOM
             Encoding reVal = Encoding.Default;
 
-            BinaryReader r = new BinaryReader(fs, System.Text.Encoding.Default);
-            int i;
-            int.TryParse(fs.Length.ToString(), out i);
+            BinaryReader r = new BinaryReader(fs, Encoding.Default);
+            int.TryParse(fs.Length.ToString(), out int i);
             byte[] ss = r.ReadBytes(i);
             if (IsUTF8Bytes(ss) || (ss[0] == 0xEF && ss[1] == 0xBB && ss[2] == 0xBF))
             {

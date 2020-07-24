@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
 using System.Windows.Forms;
-using System.Text.RegularExpressions;
 using System.Threading;
 using System.Diagnostics;
-using org.apache.pdfbox.pdmodel;
-using org.apache.pdfbox.text;
-using System.Runtime.InteropServices;
 using paper_checking.PaperCheck;
 
 namespace paper_checking
@@ -182,7 +176,7 @@ namespace paper_checking
             if (txtFinalReportPath.Text == "" || txtToCheckPaperPath.Text == "" || 
                 !Directory.Exists(txtFinalReportPath.Text) || !Directory.Exists(txtToCheckPaperPath.Text))
             {
-                MessageBox.Show(this, "必须选择存在的待查论文文件夹和查重报告保存的文件夹！", "提示");
+                MessageBox.Show(this, "待查论文文件夹或查重报告保存的文件夹不存在！", "提示");
                 return;
             }
 
@@ -389,13 +383,13 @@ namespace paper_checking
             txtMinBytes.Text = "1";
         }
 
-        private void txtBlocklist_KeyPress(object sender, KeyPressEventArgs e)
+        private void TxtBlocklist_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13 || e.KeyChar == 10 || e.KeyChar == 64)
                 e.Handled = true;
         }
 
-        private void btnManageLibrary_Click(object sender, EventArgs e)
+        private void BtnManageLibrary_Click(object sender, EventArgs e)
         {
             Process.Start("explorer.exe", Application.StartupPath + Path.DirectorySeparatorChar + RunningEnv.ProgramParam.TxtPaperSourcePath);
         }
