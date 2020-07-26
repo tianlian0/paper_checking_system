@@ -184,14 +184,14 @@
     <Reference Include="pdfbox-app">
       <HintPath>.\pdfbox-app.dll</HintPath>
     </Reference>
-    <Reference Include="Spire.Doc, Version=8.7.5.0, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
-      <HintPath>..\packages\Spire.Doc.8.7.5\lib\net40\Spire.Doc.dll</HintPath>
+    <Reference Include="Spire.Doc, Version=7.11.0.41046, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\FreeSpire.Doc.7.11.0\lib\net46\Spire.Doc.dll</HintPath>
     </Reference>
-    <Reference Include="Spire.License, Version=1.3.8.40, Culture=neutral, PublicKeyToken=b1144360237c8b3f, processorArchitecture=MSIL">
-      <HintPath>..\packages\Spire.Doc.8.7.5\lib\net40\Spire.License.dll</HintPath>
+    <Reference Include="Spire.License, Version=1.3.7.46, Culture=neutral, PublicKeyToken=b1144360237c8b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FreeSpire.Doc.7.11.0\lib\net46\Spire.License.dll</HintPath>
     </Reference>
-    <Reference Include="Spire.Pdf, Version=6.7.6.0, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
-      <HintPath>..\packages\Spire.Doc.8.7.5\lib\net40\Spire.Pdf.dll</HintPath>
+    <Reference Include="Spire.Pdf, Version=5.11.0.2046, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\FreeSpire.Doc.7.11.0\lib\net46\Spire.Pdf.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
