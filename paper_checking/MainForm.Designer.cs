@@ -303,7 +303,7 @@
             this.txtCheckThreshold.Name = "txtCheckThreshold";
             this.txtCheckThreshold.Size = new System.Drawing.Size(100, 23);
             this.txtCheckThreshold.TabIndex = 1;
-            this.txtCheckThreshold.Text = "12";
+            this.txtCheckThreshold.Text = "13";
             this.txtCheckThreshold.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DigitFilterKeyPress);
             // 
             // btnStartChecking
@@ -700,7 +700,7 @@
             this.groupBox6.Size = new System.Drawing.Size(379, 55);
             this.groupBox6.TabIndex = 32;
             this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "版本更新";
+            this.groupBox6.Text = "版本信息";
             // 
             // lblVersion
             // 

@@ -34,7 +34,7 @@ namespace paper_checking
             public CheckParam()
             {
                 CheckWay = 0;
-                CheckThreshold = 12;
+                CheckThreshold = 13;
                 Recover = false;
                 StatisTable = true;
                 ToCheckPaperPath = "";

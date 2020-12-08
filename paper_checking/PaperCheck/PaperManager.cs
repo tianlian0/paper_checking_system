@@ -263,7 +263,7 @@ namespace paper_checking.PaperCheck
                     string[] real_check_param;
                     if (runningEnv.CheckData.CheckWay == 1)
                     {
-                        //如果时横向查重
+                        //如果是横向查重
                         real_check_param = new string[8] { runningEnv.CheckData.CheckThreshold.ToString(),
                                                             runningEnv.SettingData.CheckThreadCnt.ToString(), 
                                                             i.ToString(),

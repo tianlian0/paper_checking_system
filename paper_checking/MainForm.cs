@@ -134,6 +134,9 @@ namespace paper_checking
                     {
                         mainForm.btnAddLibrary.Enabled = state;
                         mainForm.btnPaperSourcePath.Enabled = state;
+                        mainForm.btnStartChecking.Enabled = state;
+                        mainForm.groupBox2.Enabled = state;
+                        mainForm.groupBox4.Enabled = state;
                     }
                 )
             );
@@ -233,7 +236,9 @@ namespace paper_checking
         private void DigitFilterKeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar != 8 && !char.IsDigit(e.KeyChar))
+            {
                 e.Handled = true;
+            }
         }
 
         /*
@@ -242,7 +247,9 @@ namespace paper_checking
         private void MainFormFormClosing(object sender, FormClosingEventArgs e)
         {
             if (tabControl1.TabPages.Count <= 1)
+            {
                 return;
+            }
 
             //判断是否有正在进行的任务
             if (!Monitor.TryEnter(RunningEnv.EnvRunningLock))
