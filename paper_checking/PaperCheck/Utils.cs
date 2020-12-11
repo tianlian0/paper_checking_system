@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
@@ -252,6 +253,36 @@ namespace paper_checking.PaperCheck
             catch (Exception)
             { }
         }
+
+        private static void ForeachFile(string filePathByForeach, ref List<FileInfo> result)
+        {
+            DirectoryInfo theFolder = new DirectoryInfo(filePathByForeach);
+            //获取所在目录的文件夹
+            DirectoryInfo[] dirInfo = theFolder.GetDirectories();
+            //获取所在目录的文件
+            FileInfo[] file = theFolder.GetFiles();
+            //遍历文件
+            foreach (FileInfo fileItem in file)
+            {
+                result.Add(fileItem);
+            }
+            //遍历文件夹
+            foreach (DirectoryInfo NextFolder in dirInfo)
+            {
+                ForeachFile(NextFolder.FullName, ref result);
+            }
+        }
+
+        /*
+         * 递归获取所有文件
+         */
+        public static List<FileInfo> GetFileInfoRecursion(DirectoryInfo directory)
+        {
+            List<FileInfo> result = new List<FileInfo>();
+            ForeachFile(directory.FullName, ref result);
+            return result;
+        }
+
 
         static public void AdsMessage()
         {

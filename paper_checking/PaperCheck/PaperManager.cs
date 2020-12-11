@@ -45,7 +45,7 @@ namespace paper_checking.PaperCheck
             }
 
             //获取源文件夹中的待转换文件
-            FileInfo[] fileInfo = sourceFolder.GetFiles();
+            FileInfo[] fileInfo = Utils.GetFileInfoRecursion(sourceFolder).ToArray();
 
             //按本线程所分配的任务进行转换
             int addNumo = int.Parse(runningEnv.SettingData.ConvertThreadCnt.ToString());
@@ -53,10 +53,12 @@ namespace paper_checking.PaperCheck
             {
                 FileInfo NextFile = fileInfo[FileInfoNo];
 
-                string path = sourceFolder.FullName + Path.DirectorySeparatorChar + NextFile.Name;
+                string path = NextFile.FullName;
                 string real_dis_file_name = Regex.Replace(NextFile.Name, @"[^\u4e00-\u9fa5\u0022\《\》\（\）\—\；\，\。\“\”\！\#\\_\-\.\,\:\(\)\'\[\]\【\】\+\·\：\<\>\w]", string.Empty);
                 foreach (char rInvalidChar in Path.GetInvalidFileNameChars())
+                {
                     real_dis_file_name = real_dis_file_name.Replace(rInvalidChar.ToString(), string.Empty);
+                }
                 string dist_path = textFolder.FullName + Path.DirectorySeparatorChar + real_dis_file_name + ".txt";
 
                 //文件已经被转换则忽略该文件
@@ -102,7 +104,8 @@ namespace paper_checking.PaperCheck
                         {
                             File.Delete(dist_path);
                         }
-                        throw new Exception();//并爆出一个异常
+                        //并抛出一个异常
+                        throw new Exception();
                     }
                 }
                 catch (Exception e)
