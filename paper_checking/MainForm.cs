@@ -74,7 +74,7 @@ namespace paper_checking
         {
             if (runningEnv.CheckData.CheckThreshold >= 100 || runningEnv.CheckData.CheckThreshold < 1)
             {
-                runningEnv.CheckData.CheckThreshold = 12;
+                runningEnv.CheckData.CheckThreshold = 13;
             }
             if (runningEnv.CheckData.CheckWay != 0 && runningEnv.CheckData.CheckWay != 1)
             {
@@ -82,11 +82,11 @@ namespace paper_checking
             }
             if (runningEnv.CheckData.MinBytes < 0)
             {
-                runningEnv.CheckData.MinBytes = 1;
+                runningEnv.CheckData.MinBytes = 0;
             }
             if(runningEnv.CheckData.MinWords < 0 || runningEnv.CheckData.MinWords > 99998)
             {
-                runningEnv.CheckData.MinWords = 1;
+                runningEnv.CheckData.MinWords = 0;
             }
             if (runningEnv.SettingData.CheckThreadCnt >= 100 || runningEnv.SettingData.CheckThreadCnt < 1)
             {
@@ -386,8 +386,8 @@ namespace paper_checking
          */
         private void ButtonRestoreDefault2(object sender, EventArgs e)
         {
-            txtMinWords.Text = "1";
-            txtMinBytes.Text = "1";
+            txtMinWords.Text = "0";
+            txtMinBytes.Text = "0";
         }
 
         private void TxtBlocklist_KeyPress(object sender, KeyPressEventArgs e)

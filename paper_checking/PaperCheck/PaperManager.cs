@@ -59,6 +59,10 @@ namespace paper_checking.PaperCheck
                 {
                     real_dis_file_name = real_dis_file_name.Replace(rInvalidChar.ToString(), string.Empty);
                 }
+                foreach (char rInvalidChar in Path.GetInvalidPathChars())
+                {
+                    real_dis_file_name = real_dis_file_name.Replace(rInvalidChar.ToString(), string.Empty);
+                }
                 string dist_path = textFolder.FullName + Path.DirectorySeparatorChar + real_dis_file_name + ".txt";
 
                 //文件已经被转换则忽略该文件

@@ -511,7 +511,7 @@
             this.txtMinBytes.Name = "txtMinBytes";
             this.txtMinBytes.Size = new System.Drawing.Size(100, 23);
             this.txtMinBytes.TabIndex = 25;
-            this.txtMinBytes.Text = "1";
+            this.txtMinBytes.Text = "0";
             this.txtMinBytes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DigitFilterKeyPress);
             // 
             // txtMinWords
@@ -522,7 +522,7 @@
             this.txtMinWords.Name = "txtMinWords";
             this.txtMinWords.Size = new System.Drawing.Size(100, 23);
             this.txtMinWords.TabIndex = 24;
-            this.txtMinWords.Text = "1";
+            this.txtMinWords.Text = "0";
             this.txtMinWords.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DigitFilterKeyPress);
             // 
             // label4

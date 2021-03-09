@@ -214,7 +214,7 @@ namespace paper_checking.PaperCheck
                 error_msg.Append("\r\n可能是以下原因导致：\r\n1、pdf或word文件存在只读密码、打开密码或防复制保护，请将保护取消。\r\n" +
                 "2、pdf或word文件为图片或扫描件，系统无法对扫描件和图片进行查重。建议使用office word来生成pdf。\r\n" +
                 "3、出错文件已经损坏无法正常打开，请尝试将上述文件逐个打开检查。\r\n" +
-                "4、文件的大小、字数小于所设阈值。\r\n" +
+                "4、文件中不包含有效的中文字符，或文件的大小、字数小于所设阈值。\r\n" +
                 "5、出错的word文件为非标文件，请使用office word打开，另存为新的word文件后再进行查重。");
                 runningEnv.UIContext.BeginInvoke(new Action(() =>
                 {
