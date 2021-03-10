@@ -72,7 +72,7 @@ PS：①截图部分内容涉及隐私，已马赛克处理。②截图、视频
 
 #### 反馈交流群&捐助
 ![image](https://github.com/tianlian0/paper_checking_system/blob/master/images/shang.png)  
-欢迎各位免费、付费用户进入反馈交流QQ群；欢迎捐助本项目。  
+欢迎各位免费、付费用户进入反馈交流QQ群：778041438；欢迎捐助本项目。  
 
 #### 商业合作
 本项目遵守GPL2协议，同时本项目已申请三项软件著作权  
