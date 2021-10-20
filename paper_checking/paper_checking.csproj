@@ -96,6 +96,9 @@
   <PropertyGroup>
     <ManifestKeyFile>user.pfx</ManifestKeyFile>
   </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>Always</RunPostBuildEvent>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="ICSharpCode.SharpZipLib">
       <HintPath>.\ICSharpCode.SharpZipLib.dll</HintPath>

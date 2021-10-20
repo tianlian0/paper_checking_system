@@ -67,7 +67,7 @@ namespace paper_checking
             startWords += titletemp.Length - 9;
             //startWords = sourceFile2.IndexOf("#####\r\n") + "#####\r\n".Length;
             int i = 0;
-            richTextBox1.Text = titletemp + sourceFile2.ToString() + "声明：本查重报告上的所有内容仅供参考。商业合作、技术咨询及BUG反馈可联系QQ/微信：654062779";
+            richTextBox1.Text = titletemp + sourceFile2.ToString() + "声明：开源版查重报告较为简易，查重报告中所有内容仅供参考。商业合作、技术咨询及BUG反馈可联系微信：di18810760681，或QQ：1253332375\r\n商用版为您提供更丰富功能、更全面详尽的查重报告和更高的软件稳定性，商用试用版下载链接：https://xincheck.com/?id=28";
             //richTextBox1.Text = sourceFile2 + sourceFile;
             //int i = sourceFile2.Replace("\r\n"," ").Length;
 
