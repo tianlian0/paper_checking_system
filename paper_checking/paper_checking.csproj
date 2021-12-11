@@ -319,8 +319,7 @@
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>Copy /y "$(ProjectDir)paper_check.dll" "$(ProjectDir)$(OutDir)"
-Copy /y "$(ProjectDir)pdfbox-app.dll" "$(ProjectDir)$(OutDir)"
+    <PostBuildEvent>Copy /y "$(ProjectDir)*.dll" "$(ProjectDir)$(OutDir)"
 Copy /y "$(ProjectDir)key" "$(ProjectDir)$(OutDir)"</PostBuildEvent>
   </PropertyGroup>
 </Project>
