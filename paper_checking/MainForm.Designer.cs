@@ -88,6 +88,8 @@
             this.label23 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -692,12 +694,14 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.label12);
+            this.groupBox6.Controls.Add(this.label10);
             this.groupBox6.Controls.Add(this.lblVersion);
             this.groupBox6.Controls.Add(this.btnShowLicence);
             this.groupBox6.Controls.Add(this.label23);
             this.groupBox6.Location = new System.Drawing.Point(32, 20);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(379, 55);
+            this.groupBox6.Size = new System.Drawing.Size(379, 115);
             this.groupBox6.TabIndex = 32;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "版本信息";
@@ -733,9 +737,9 @@
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.textBox4);
-            this.groupBox5.Location = new System.Drawing.Point(32, 81);
+            this.groupBox5.Location = new System.Drawing.Point(32, 141);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(379, 234);
+            this.groupBox5.Size = new System.Drawing.Size(379, 174);
             this.groupBox5.TabIndex = 30;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "使用说明";
@@ -753,6 +757,28 @@
             this.textBox4.Size = new System.Drawing.Size(367, 208);
             this.textBox4.TabIndex = 0;
             this.textBox4.Text = resources.GetString("textBox4.Text");
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label10.Location = new System.Drawing.Point(19, 57);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(343, 28);
+            this.label10.TabIndex = 28;
+            this.label10.Text = "想要更丰富、美观的查重报告？想使用其它查重算法？\r\n有对标书进行查重或错误检查的需求？想对图片查重？\r\n";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label12.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label12.Location = new System.Drawing.Point(133, 90);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(119, 14);
+            this.label12.TabIndex = 29;
+            this.label12.Text = "点此使用商用版！";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // MainForm
             // 
@@ -852,6 +878,8 @@
         private System.Windows.Forms.TextBox txtBlocklist;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Button btnManageLibrary;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label10;
     }
 }
 

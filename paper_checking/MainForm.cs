@@ -400,6 +400,11 @@ namespace paper_checking
         {
             Process.Start("explorer.exe", Application.StartupPath + Path.DirectorySeparatorChar + RunningEnv.ProgramParam.TxtPaperSourcePath);
         }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://xincheck.com/?id=28");
+        }
     }
    
 }
