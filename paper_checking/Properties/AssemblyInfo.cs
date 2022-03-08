@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("文本查重系统")]
-[assembly: AssemblyCopyright("tianlian0 Copyright ©  2020")]
+[assembly: AssemblyCopyright("tianlian0 Copyright ©  2022")]
 [assembly: AssemblyTrademark("TextCheck")]
 [assembly: AssemblyCulture("")]
 
@@ -33,6 +33,6 @@ using System.Runtime.InteropServices;
 // 可以指定所有值，也可以使用以下所示的 "*" 预置版本号和修订号
 // 方法是按如下所示使用“*”: :
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("0.9.0.14")]
-[assembly: AssemblyFileVersion("0.9.0.14")]
+[assembly: AssemblyVersion("0.9.0.15")]
+[assembly: AssemblyFileVersion("0.9.0.15")]
 [assembly: NeutralResourcesLanguage("zh-Hans")]
